@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Work It Out</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="hello_blank_fragment">Hello what blank fragment</string>
+    <string name="switch_message">"What is this switch message"</string>
+    <string name="switch_summary">Switch summary</string>
+    <string name="switch_title">Switch title</string>
+
+</resources>
