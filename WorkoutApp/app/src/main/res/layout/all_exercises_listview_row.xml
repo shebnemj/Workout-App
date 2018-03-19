@@ -9,12 +9,12 @@
 
     <ImageView
         android:id="@+id/imageView2ID"
-        android:layout_width="558dp"
-        android:layout_height="120dp"
+        android:layout_width="344dp"
+        android:layout_height="match_parent"
         android:layout_weight="1"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/yogamatt"/>
+        app:srcCompat="@drawable/yogamatt" />
 
     <LinearLayout
         android:layout_width="match_parent"
