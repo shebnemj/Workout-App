@@ -20,7 +20,7 @@ public class WorkoutDetailsPage extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        /*String savedExtra = getIntent().getStringExtra("animal");
+        String savedExtra = getIntent().getStringExtra("animal");
         TextView myText = (TextView) findViewById(R.id.textID);
         myText.setText(savedExtra);
 
@@ -30,12 +30,12 @@ public class WorkoutDetailsPage extends AppCompatActivity {
 
         String workoutTypeTest = "Makeswitch";
         TextView myText3 = (TextView) findViewById(R.id.textID3);
-        myText3.setText(workoutTypeTest);*/
+        myText3.setText(workoutTypeTest);
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the app bar.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_edit, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
