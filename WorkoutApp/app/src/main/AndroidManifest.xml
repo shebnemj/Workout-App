@@ -26,11 +26,11 @@
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".WorkoutDetailsPage"
-            android:label="Workout name"
+            android:label=""
             android:parentActivityName=".AllWorkoutsPage"/>
         <activity
             android:name=".ExerciseDetailsPage"
-            android:label="Exercise name"
+            android:label=""
             android:parentActivityName=".AllExercisesPage"/>
         <activity
             android:name=".ProfileActivity"

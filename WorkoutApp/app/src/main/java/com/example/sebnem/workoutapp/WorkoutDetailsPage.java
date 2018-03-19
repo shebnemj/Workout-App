@@ -20,7 +20,7 @@ public class WorkoutDetailsPage extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        String savedExtra = getIntent().getStringExtra("animal");
+        /*String savedExtra = getIntent().getStringExtra("animal");
         TextView myText = (TextView) findViewById(R.id.textID);
         myText.setText(savedExtra);
 
@@ -30,7 +30,7 @@ public class WorkoutDetailsPage extends AppCompatActivity {
 
         String workoutTypeTest = "Makeswitch";
         TextView myText3 = (TextView) findViewById(R.id.textID3);
-        myText3.setText(workoutTypeTest);
+        myText3.setText(workoutTypeTest);*/
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
