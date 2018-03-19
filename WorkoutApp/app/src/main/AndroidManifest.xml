@@ -9,26 +9,37 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AllWorkoutsPage" />
-        <activity android:name=".AllExercisesPage" />
-        <activity android:name=".WorkoutDetailsPage" />
-        <activity android:name=".ExerciseDetailsPage" />
-        <activity android:name=".SettingsActivity"
-            android:label="Settings"
-            android:parentActivityName=".MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
-        </activity>
+        <activity
+            android:name=".AllWorkoutsPage"
+            android:label="@string/action_all_workouts"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".AllExercisesPage"
+            android:label="@string/action_all_exercises"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".WorkoutDetailsPage"
+            android:label="Workout name"
+            android:parentActivityName=".AllWorkoutsPage"/>
+        <activity
+            android:name=".ExerciseDetailsPage"
+            android:label="Exercise name"
+            android:parentActivityName=".AllExercisesPage"/>
+        <activity
+            android:name=".ProfileActivity"
+            android:label="@string/action_profile"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/action_settings"
+            android:parentActivityName=".MainActivity" />
     </application>
 
 </manifest>

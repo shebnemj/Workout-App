@@ -5,22 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="165dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="8dp"
-        android:fontFamily="sans-serif"
-        android:text="All Exercises"
-        android:textSize="18sp"
-        android:typeface="serif"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.082"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.016" />
+    <include
+        layout="@layout/toolbar_main"
+        android:id="@+id/toolbar" />
 
     <ListView
         android:id="@+id/listview2ID"
