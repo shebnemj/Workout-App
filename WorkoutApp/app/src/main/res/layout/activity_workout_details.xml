@@ -24,16 +24,17 @@
 
     <TextView
         android:id="@+id/textID6"
-        android:layout_width="197dp"
-        android:layout_height="75dp"
+        android:layout_width="167dp"
+        android:layout_height="77dp"
+        android:background="@drawable/borders"
         android:text="Workout Description"
-        android:textSize="18sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.901"
+        app:layout_constraintHorizontal_bias="0.761"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintVertical_bias="0.582" />
+        app:layout_constraintVertical_bias="0.585" />
 
     <TextView
         android:id="@+id/textID7"
@@ -79,20 +80,6 @@
         app:layout_constraintVertical_bias="0.522" />
 
     <TextView
-        android:id="@+id/textID3"
-        android:layout_width="198dp"
-        android:layout_height="31dp"
-        android:text="Workout Type"
-        android:textAlignment="textStart"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.901"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintVertical_bias="0.416" />
-
-    <TextView
         android:id="@+id/textID5"
         android:layout_width="119dp"
         android:layout_height="31dp"
@@ -135,5 +122,37 @@
         app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:srcCompat="@android:drawable/ic_media_play" />
+
+
+    <LinearLayout
+        android:layout_width="167dp"
+        android:layout_height="50dp"
+        android:background="@drawable/borders"
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.761"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintVertical_bias="0.425">
+
+        <TextView
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:text="Auto"
+            android:textAlignment="textEnd" />
+
+        <Switch
+            android:id="@+id/reminder"
+            android:layout_width="51dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="74dp"
+            android:layout_height="wrap_content"
+            android:text="Manual" />
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

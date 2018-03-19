@@ -9,7 +9,7 @@
 
     <ImageView
         android:id="@+id/imageView2ID"
-        android:layout_width="344dp"
+        android:layout_width="274dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:adjustViewBounds="true"
@@ -22,7 +22,8 @@
         android:layout_gravity="center_vertical"
         android:layout_weight="1"
         android:gravity="center_vertical"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingLeft="10dp">
 
         <TextView
             android:id="@+id/nameTextView2ID"
