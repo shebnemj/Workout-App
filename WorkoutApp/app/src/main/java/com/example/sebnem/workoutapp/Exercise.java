@@ -18,6 +18,7 @@ public abstract class Exercise {
             new Cardio("Climbers","is this gonna work i wonder", R.drawable.abs,"yogamatt","","Yoga Matt",20,2,0),
             new Cardio("Climbers","is this gonna work i wonder", R.drawable.yogamatt,"yogamatt","","Yoga Matt",20,2,0),
             new Cardio("Climbers","is this gonna work i wonder", R.drawable.yogamatt,"yogamatt","","Yoga Matt",20,2,0),
+            new Cardio("Climbers","is this gonna work i wonder", R.drawable.yogamatt,"yogamatt","","Yoga Matt",20,2,0),
             new Cardio("Butt Kicks","okkkkkk", R.drawable.yogamatt,"yogamatt","","Yoga Matt",20,2,0)
     };
 
