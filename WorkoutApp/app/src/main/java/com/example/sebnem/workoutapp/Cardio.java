@@ -5,8 +5,8 @@ public class Cardio extends Exercise {
     private int duration;
     private float distance;
 
-    public Cardio(String name, String descrip, int imglink, String hyperlink, String newnote, String equip, int c, int time, float d) {
-        super(name,descrip,imglink,hyperlink,newnote,equip,c);
+    public Cardio(String name, String descrip, int imglink, String equip) {
+        super(name,descrip,imglink,equip);
     }
 
     public int getDuration() {

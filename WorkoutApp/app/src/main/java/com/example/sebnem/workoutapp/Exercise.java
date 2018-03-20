@@ -12,14 +12,29 @@ public abstract class Exercise {
     private String equipment;
 
     public static final Exercise[] exercises = {
-            new Cardio("Climbers","is this gonna work i wonder", R.drawable.yogamatt,"yogamatt","","Yoga Matt",20,2,0),
-            new Cardio("Jumping Jacks","Okay",R.drawable.yogamatt,"yogamatt","","Yoga Matt",10,2,0),
-            new Cardio("Climbers","is this gonna work i wonder", R.drawable.yogamatt,"yogamatt","","Yoga Matt",20,2,0),
-            new Cardio("Climbers","is this gonna work i wonder", R.drawable.abs,"yogamatt","","Yoga Matt",20,2,0),
-            new Cardio("Climbers","is this gonna work i wonder", R.drawable.yogamatt,"yogamatt","","Yoga Matt",20,2,0),
-            new Cardio("Climbers","is this gonna work i wonder", R.drawable.yogamatt,"yogamatt","","Yoga Matt",20,2,0),
-            new Cardio("Climbers","is this gonna work i wonder", R.drawable.yogamatt,"yogamatt","","Yoga Matt",20,2,0),
-            new Cardio("Butt Kicks","okkkkkk", R.drawable.yogamatt,"yogamatt","","Yoga Matt",20,2,0)
+            //new Cardio("Climbers","climbers", R.drawable.yogamatt,"equipment"),
+            new Muscle("Barbell Shrugs","",R.drawable.barbell_shrugs,""),
+            new Muscle("Bench Press","",R.drawable.bench_press,""),
+            new Muscle("Butterfly Machine","",R.drawable.butterfly_machine,""),
+            new Muscle("Cable Crossover","",R.drawable.cable_crossover,""),
+            new Muscle("Chest Dips","",R.drawable.chest_dips,""),
+            new Muscle("Chin Ups","",R.drawable.chin_ups,""),
+            new Muscle("Dumbbell Flys","",R.drawable.dumbbell_flys,""),
+            new Muscle("Dumbbell Lunges","",R.drawable.dumbbell_lunges,""),
+            new Muscle("Front Dumbbell Raise","",R.drawable.front_dumbbell_raise,""),
+            new Muscle("Leg Extensions","",R.drawable.leg_extensions,""),
+            new Muscle("Machine Bench Press","",R.drawable.machine_bench_press,""),
+            new Muscle("Narrow Stance Leg Press","",R.drawable.narrow_stance_leg_press,""),
+            new Muscle("Pull Ups","",R.drawable.pull_ups,""),
+            new Muscle("Push Ups","",R.drawable.push_ups,""),
+            new Muscle("Seated Barbell Shoulder Press","",R.drawable.seated_barbell_shoulder_press,""),
+            new Muscle("Seated Cable Rows","",R.drawable.seated_cable_rows,""),
+            new Muscle("Seated Leg Curl","",R.drawable.seated_leg_curl,""),
+            new Muscle("Seated Shoulder Press Machine","",R.drawable.seated_shoulder_press_machine,""),
+            new Muscle("Shoulder Shrugs","",R.drawable.shoulder_shrugs,""),
+            new Muscle("Squats Using Dumbbells","",R.drawable.squats_using_dumbbells,""),
+            new Muscle("Upright Cable Row","",R.drawable.upright_cable_row,""),
+            new Muscle("Wide Grip Lat Pull Down","",R.drawable.wide_grip_lat_pull_down,"")
     };
 
     public static String[] eNames(){
@@ -37,16 +52,13 @@ public abstract class Exercise {
         return images;
     }
 
-    public Exercise(String name, String descrip, int imglink, String hyperlink, String newnote, String equip, int c) {
+    public Exercise(String name, String descrip, int imglink, String equip) {
         setExerciseName(name);
         setDescription(descrip);
         setImage(imglink);
-        setLink(hyperlink);
-        setNotes(newnote);
         setEquipment(equip);
-
         ExerciseStats stats = new ExerciseStats();
-        stats.setCount(c);
+        stats.setCount(0);
     }
 
     public String getExerciseName() {
