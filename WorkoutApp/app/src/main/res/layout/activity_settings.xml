@@ -8,4 +8,56 @@
     <include
         layout="@layout/toolbar_main"
         android:id="@+id/toolbar" />
+
+    <TextView
+        android:id="@+id/textID900"
+        android:layout_width="67dp"
+        android:layout_height="25dp"
+        android:paddingLeft="10dp"
+        android:text="Units"
+        android:textAlignment="textStart"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/unitchanger"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintVertical_bias="0.060000002" />
+
+    <LinearLayout
+        android:id="@+id/unitchanger"
+        android:layout_width="234dp"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textID900"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintVertical_bias="0.043">
+
+        <TextView
+            android:layout_width="28dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Metric"
+            android:textAlignment="textEnd" />
+
+        <Switch
+            android:id="@+id/reminder"
+            android:layout_width="1dp"
+            android:layout_height="17dp"
+            android:layout_weight="1"
+            android:textAlignment="center" />
+
+        <TextView
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Imperial"
+            android:textAlignment="textStart"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>

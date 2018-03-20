@@ -51,8 +51,10 @@ public class AllWorkoutsPage extends AppCompatActivity {
                 Intent intent = new Intent(AllWorkoutsPage.this, WorkoutDetailsPage.class);
                 String message = nameArray[position];
                 String message2 = list.get(position).getWorkoutDescription();
+                Integer image = imageArray[position];
                 intent.putExtra("animal", message);
                 intent.putExtra("species", message2);
+                intent.putExtra("maybimage", image);
                 startActivity(intent);
             }
         });
