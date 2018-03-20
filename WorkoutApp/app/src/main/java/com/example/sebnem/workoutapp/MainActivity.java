@@ -17,11 +17,13 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Workout w = new Workout("HIIT",true, "Okay", 10);
-    Workout w2 = new Workout("Lifts",false, "is this gonna work i wonder", 15);
-    Workout w3 = new Workout("Yoga",false, "okkkkkk", 15);
+    Workout[] workouts = {
+            Workout.workouts[0],
+            Workout.workouts[1],
+            Workout.workouts[2]
+    };
 
-    String[] nameArray = {w.getWorkoutName(),w2.getWorkoutName(),w3.getWorkoutName()};
+    String[] nameArray = {workouts[0].getWorkoutName(),workouts[1].getWorkoutName(),workouts[2].getWorkoutName()};
 
     Integer[] imageArray = {R.drawable.hiit,
             R.drawable.dumbbell,
@@ -44,11 +46,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         listView = (ListView) findViewById(R.id.listviewID);
         listView.setAdapter(whatever);
 
-        final List<Workout> list= new ArrayList<Workout>();
+        final List<Workout> list;
 
-        list.add(w);
-        list.add(w2);
-        list.add(w3);
+        list = new ArrayList<Workout>();
+
+        for(int i=0;i<workouts.length;i++){
+            list.add(workouts[i]);
+        }
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

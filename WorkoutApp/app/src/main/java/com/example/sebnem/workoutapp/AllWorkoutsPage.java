@@ -15,15 +15,11 @@ import java.util.*;
 
 public class AllWorkoutsPage extends AppCompatActivity {
 
-    Workout w = new Workout("HIIT",true, "Okay", 10);
-    Workout w2 = new Workout("Lifts",false, "is this gonna work i wonder", 15);
-    Workout w3 = new Workout("Yoga",false, "okkkkkk", 15);
+    Workout[] workouts=Workout.workouts;
 
-    String[] nameArray = {w.getWorkoutName(),w2.getWorkoutName(),w3.getWorkoutName()};
+    String[] nameArray = Workout.wNames();
 
-    Integer[] imageArray = {R.drawable.hiit,
-            R.drawable.dumbbell,
-            R.drawable.stretch};
+    Integer[] imageArray = Workout.wImages();
 
     ListView listView;
 
@@ -43,9 +39,9 @@ public class AllWorkoutsPage extends AppCompatActivity {
 
         list = new ArrayList<Workout>();
 
-        list.add(w);
-        list.add(w2);
-        list.add(w3);
+        for(int i=0;i<workouts.length;i++){
+            list.add(workouts[i]);
+        }
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

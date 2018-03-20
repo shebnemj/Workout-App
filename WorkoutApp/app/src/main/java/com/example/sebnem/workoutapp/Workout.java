@@ -1,9 +1,5 @@
 package com.example.sebnem.workoutapp;
 
-/**
- * Created by sebnem on 12/03/2018.
- */
-
 import java.util.*;
 
 public class Workout {
@@ -13,6 +9,33 @@ public class Workout {
     private String workoutDescription;
     private int duration;
     private ArrayList<Exercise> exerciseList;
+
+    public static final Workout[] workouts={
+            new Workout("HIIT",true, "Okay", 10),
+            new Workout("Lifts",false, "is this gonna work i wonder", 15),
+            new Workout("Lifts",false, "is this gonna work i wonder", 15),
+            new Workout("Lifts",false, "is this gonna work i wonder", 15),
+            new Workout("Lifts",false, "is this gonna work i wonder", 15),
+            new Workout("Lifts",false, "is this gonna work i wonder", 15),
+            new Workout("Lifts",false, "is this gonna work i wonder", 15),
+            new Workout("Lifts",false, "is this gonna work i wonder", 15),
+            new Workout("Yoga",false, "okkkkkk", 15)
+    };
+
+    public static String[] wNames(){
+        String[] names=new String[workouts.length];
+        for (int i=0;i<names.length;i++){
+            names[i]=workouts[i].getWorkoutName();
+        }
+        return names;
+    }
+    public static Integer[] wImages(){
+        Integer[] images=new Integer[workouts.length];
+        for (int i=0;i<images.length;i++){
+            images[i]=R.drawable.hiit;
+        }
+        return images;
+    }
 
     public Workout(String name, boolean type, String descrip, int time) {
         setWorkoutName(name);

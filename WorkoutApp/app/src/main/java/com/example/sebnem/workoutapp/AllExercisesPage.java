@@ -14,15 +14,11 @@ import android.widget.ListView;
 public class AllExercisesPage extends AppCompatActivity {
 
 
-    Exercise e = new Cardio("Jumping Jacks","Okay","","yogamatt","","Yoga Matt",10,2,0);
-    Exercise e2 = new Cardio("Climbers","is this gonna work i wonder", "","yogamatt","","Yoga Matt",20,2,0);
-    Exercise e3 = new Cardio("Butt Kicks","okkkkkk", "","yogamatt","","Yoga Matt",20,2,0);
+    Exercise[] exercises=Exercise.exercises;
 
-    String[] nameArray = {e.getExerciseName(),e2.getExerciseName(),e3.getExerciseName()};
+    String[] nameArray = Exercise.eNames();
 
-    Integer[] imageArray = {R.drawable.yogamatt,
-            R.drawable.yogamatt,
-            R.drawable.yogamatt};
+    Integer[] imageArray = Exercise.eImages();
 
     ListView listView;
 

@@ -1,19 +1,42 @@
 package com.example.sebnem.workoutapp;
 
-/**
- * Created by sebnem on 12/03/2018.
- */
+import android.support.constraint.solver.widgets.ConstraintAnchor;
 
 public abstract class Exercise {
 
     private String exerciseName;
     private String description;
-    private String imageLink;
+    private int imageLink;
     private String link;
     private String notes;
     private String equipment;
 
-    public Exercise(String name, String descrip, String imglink, String hyperlink, String newnote, String equip, int c) {
+    public static final Exercise[] exercises = {
+            new Cardio("Climbers","is this gonna work i wonder", R.drawable.yogamatt,"yogamatt","","Yoga Matt",20,2,0),
+            new Cardio("Jumping Jacks","Okay",R.drawable.yogamatt,"yogamatt","","Yoga Matt",10,2,0),
+            new Cardio("Climbers","is this gonna work i wonder", R.drawable.yogamatt,"yogamatt","","Yoga Matt",20,2,0),
+            new Cardio("Climbers","is this gonna work i wonder", R.drawable.abs,"yogamatt","","Yoga Matt",20,2,0),
+            new Cardio("Climbers","is this gonna work i wonder", R.drawable.yogamatt,"yogamatt","","Yoga Matt",20,2,0),
+            new Cardio("Climbers","is this gonna work i wonder", R.drawable.yogamatt,"yogamatt","","Yoga Matt",20,2,0),
+            new Cardio("Butt Kicks","okkkkkk", R.drawable.yogamatt,"yogamatt","","Yoga Matt",20,2,0)
+    };
+
+    public static String[] eNames(){
+        String[] names=new String[exercises.length];
+        for (int i=0;i<names.length;i++){
+            names[i]=exercises[i].getExerciseName();
+        }
+        return names;
+    }
+    public static Integer[] eImages(){
+        Integer[] images=new Integer[exercises.length];
+        for (int i=0;i<images.length;i++){
+            images[i]=exercises[i].getImage();
+        }
+        return images;
+    }
+
+    public Exercise(String name, String descrip, int imglink, String hyperlink, String newnote, String equip, int c) {
         setExerciseName(name);
         setDescription(descrip);
         setImage(imglink);
@@ -33,7 +56,7 @@ public abstract class Exercise {
         return this.description;
     }
 
-    public String getImage() {
+    public int getImage() {
         return this.imageLink;
     }
 
@@ -53,7 +76,7 @@ public abstract class Exercise {
         this.description = descrip;
     }
 
-    public void setImage(String imglink) {
+    public void setImage(int imglink) {
         this.imageLink = imglink;
     }
 
