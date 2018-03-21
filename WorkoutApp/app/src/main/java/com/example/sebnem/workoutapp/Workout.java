@@ -42,6 +42,7 @@ public class Workout {
         setWorkoutType(type);
         setWorkoutDescription(descrip);
         setWorkoutDuration(time);
+        exerciseList = new ArrayList<>();
     }
 
     public String getWorkoutName() {
@@ -91,12 +92,20 @@ public class Workout {
         }
     }
 
-    public void printWorkoutInfo(Workout w){
+    public void printWorkoutInfo(){
         System.out.println("-----WORKOUT-----");
-        System.out.println("Name: "+w.getWorkoutName());
-        System.out.println("Type: "+w.getWorkoutType());
-        System.out.println("Description: "+w.getWorkoutDescription());
-        System.out.println("Duration:" +w.getWorkoutDuration());
-        w.printExerciseList();
+        System.out.println("Name: "+getWorkoutName());
+        System.out.println("Type: "+getWorkoutType());
+        System.out.println("Description: "+getWorkoutDescription());
+        System.out.println("Duration:" +getWorkoutDuration());
+        printExerciseList();
+    }
+
+    public Exercise selectExfromW(int n){
+        if (n <= exerciseList.size()){
+            return exerciseList.get(n-1);
+        }
+        System.out.println("Wrong exercise selected");
+        return null;
     }
 }

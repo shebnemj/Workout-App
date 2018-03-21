@@ -84,7 +84,7 @@ public class User {
             double equipW = inputDouble();
             System.out.println("Muscle Name/Type");
             String mName = input();
-            exN = new Muscle(exNName, des, equip, 0, rep, equipW, mName);
+            exN = new Muscle(exNName, des, rep ,equip);
             exerciseList.add(exN);
             System.out.println("Exercise Added");
         }
@@ -93,7 +93,7 @@ public class User {
             int t = inputInt();
             System.out.println("Distance");
             double d = inputDouble();
-            exN = new Cardio(exNName, des, equip, 0, t, d);
+            exN = new Cardio(exNName, des,t ,equip);
             exerciseList.add(exN);
             System.out.println("Exercise Added");
         }
@@ -169,7 +169,7 @@ public class User {
         System.out.println("What is the workout duration");
         int wNDur = inputInt();
 
-        wN = new Workout(wNName, wNDes,wNDur);
+        wN = new Workout(wNName, true,wNDes,wNDur);
 
         boolean cont = true;
 
@@ -283,11 +283,11 @@ public class User {
                 String [] temp = line.split("#");
                 if (temp[0].equals("c"))
                 {
-                    exercisesSaved.add(new Cardio(temp[1], temp[2], temp[3], Integer.parseInt(temp[4]), Integer.parseInt(temp[5]), Double.parseDouble(temp[6])));
+                    exercisesSaved.add(new Cardio(temp[1], temp[2], 3, temp[3]));
                 }
                 else if (temp[0].equals("m"))
                 {
-                    exercisesSaved.add(new Muscle(temp[1], temp[2], temp[3], Integer.parseInt(temp[4]), Integer.parseInt(temp[5]), Double.parseDouble(temp[6]), temp[7] ));
+                    exercisesSaved.add(new Muscle(temp[1], temp[2], 4, temp[3]));
                 }
             }
             return exercisesSaved;
@@ -314,7 +314,7 @@ public class User {
                 String line =input.nextLine();
                 String [] temp = line.split("#");
 
-                wSave =new Workout(temp[0], temp[1], Integer.parseInt(temp[2]));
+                wSave =new Workout(temp[0], true, temp[1], Integer.parseInt(temp[2]));
 
                  for(int i=3; i<temp.length; i++){
 
