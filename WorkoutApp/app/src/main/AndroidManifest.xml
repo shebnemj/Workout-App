@@ -21,9 +21,15 @@
             android:label="@string/action_all_workouts"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".AllExercisesPage"
+        android:name=".AllExercisesPage"
+        android:label="@string/action_all_exercises"
+        android:parentActivityName=".MainActivity" />
+
+        <activity
+            android:name=".AddExerciseActivity"
             android:label="@string/action_all_exercises"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".AllExercisesPage" />
+
         <activity
             android:name=".WorkoutDetailsPage"
             android:label=""

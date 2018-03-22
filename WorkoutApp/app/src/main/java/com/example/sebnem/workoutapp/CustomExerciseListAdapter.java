@@ -45,4 +45,8 @@ public class CustomExerciseListAdapter extends ArrayAdapter {
         return rowView;
 
     };
+
+    public void Add(){
+
+    }
 }
