@@ -52,14 +52,12 @@ public class AllExercisesPage extends AppCompatActivity {
                         String message2 = list.get(position).getDescription();
                         String equip = list.get(position).getEquipment();
                         Integer image = list.get(position).getImage();
-                        //Integer reps = ((Muscle)list.get(position)).getReps(); //what?? solve this -- basically when i do .getReps() it doesn't go through because list is exercise, not muscle..?
                         String type = list.get(position).getType();
-                        intent.putExtra("animal", message);
+                        intent.putExtra("cardioName", message);
                         intent.putExtra("species", message2);
                         intent.putExtra("maybimage", image);
                         intent.putExtra("equipment", equip);
                         intent.putExtra("TYPE", type);
-                        //intent.putExtra("reps", reps);
                         startActivity(intent);
 
                         break;

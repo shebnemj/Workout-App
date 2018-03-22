@@ -29,25 +29,21 @@ public class ExerciseDetailsPage extends AppCompatActivity {
                 ActionBar actionBar = getSupportActionBar();
                 actionBar.setDisplayHomeAsUpEnabled(true);
 
-                String savedExtraa = getIntent().getStringExtra("animal");
-                TextView myTextt = (TextView) findViewById(R.id.textID20);
-                myTextt.setText(savedExtraa);
+                String exerciseNameC = getIntent().getStringExtra("cardioName");
+                TextView nameC = (TextView) findViewById(R.id.textID20);
+                nameC.setText(exerciseNameC);
 
-                String exerciseDescripTestt = getIntent().getStringExtra("species");
+                String exerciseDescriptionC = getIntent().getStringExtra("species");
                 TextView myTextt2 = (TextView) findViewById(R.id.textID140);
-                myTextt2.setText(exerciseDescripTestt);
+                myTextt2.setText(exerciseDescriptionC);
 
-                String exerciseEquipmentt = getIntent().getStringExtra("equipment");
+                String exerciseEquipmentC = getIntent().getStringExtra("equipment");
                 TextView myTextt3 = (TextView) findViewById(R.id.textID160);
-                myTextt3.setText(exerciseEquipmentt);
-
-                //int exerciseReps = getIntent().getIntExtra("reps",0);
-                //TextView myText4 = (TextView) findViewById(R.id.textID30);
-                //myText4.setText(exerciseReps);
+                myTextt3.setText(exerciseEquipmentC);
 
                 Integer cardioImage = getIntent().getIntExtra("maybimage",0);
-                ImageView imageVieww = (ImageView) findViewById(R.id.imageView4);
-                imageVieww.setImageResource(cardioImage);
+                ImageView imageViewC = (ImageView) findViewById(R.id.imageView4);
+                imageViewC.setImageResource(cardioImage);
 
                 break;
 
@@ -72,7 +68,7 @@ public class ExerciseDetailsPage extends AppCompatActivity {
                 TextView myText3 = (TextView) findViewById(R.id.textID16);
                 myText3.setText(exerciseEquipment);
 
-                //int exerciseReps = getIntent().getIntExtra("reps",0);
+                //Integer exerciseReps = getIntent().getIntExtra("reps",0);
                 //TextView myText4 = (TextView) findViewById(R.id.textID30);
                 //myText4.setText(exerciseReps);
 

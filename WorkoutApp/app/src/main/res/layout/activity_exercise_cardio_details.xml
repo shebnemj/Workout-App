@@ -59,32 +59,32 @@ tools:context="com.example.sebnem.workoutapp.ExerciseDetailsPage">
 
 <TextView
     android:id="@+id/textID130"
-    android:layout_width="142dp"
-    android:layout_height="29dp"
+    android:layout_width="94dp"
+    android:layout_height="27dp"
     android:text="Minutes"
     android:textAlignment="textEnd"
     android:textSize="20sp"
     android:textStyle="bold"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.926"
+    app:layout_constraintHorizontal_bias="0.815"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/toolbar"
-    app:layout_constraintVertical_bias="0.321" />
+    app:layout_constraintTop_toBottomOf="@id/toolbar"
+    app:layout_constraintVertical_bias="0.21" />
 
 <TextView
     android:id="@+id/textID20"
     android:layout_width="142dp"
-    android:layout_height="29dp"
+    android:layout_height="70dp"
     android:text="Exercise Name"
     android:textSize="20sp"
     android:textStyle="bold"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.073"
+    app:layout_constraintHorizontal_bias="0.926"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/toolbar"
-    app:layout_constraintVertical_bias="0.321" />
+    app:layout_constraintTop_toBottomOf="@id/toolbar"
+    app:layout_constraintVertical_bias="0.045" />
 
 <TextView
     android:id="@+id/textID120"
@@ -162,10 +162,11 @@ tools:context="com.example.sebnem.workoutapp.ExerciseDetailsPage">
 
 <ImageView
     android:id="@+id/imageView4"
-    android:layout_width="0dp"
-    android:layout_height="140dp"
+    android:layout_width="184dp"
+    android:layout_height="159dp"
     android:scaleType="centerCrop"
     app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@id/toolbar"
     app:srcCompat="@drawable/yogamatt" />
