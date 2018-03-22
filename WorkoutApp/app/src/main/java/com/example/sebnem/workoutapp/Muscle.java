@@ -7,13 +7,13 @@ public class Muscle extends Exercise {
 	private String muscleType;
 
 	public Muscle(String name, String descrip, int imglink, String equip) {
-		super(name,descrip,imglink,equip);
+		super(name,descrip,imglink,equip,"Muscle");
 		reps=10;
 		equipmentWeight=10.0f;
 		muscleType="";
 	}
 	public Muscle(String name, String descrip, int imglink, String equip,int reps,float weight,String type) {
-		super(name,descrip,imglink,equip);
+		super(name,descrip,imglink,equip,"Muscle");
 		this.reps=reps;
 		this.equipmentWeight=weight;
 		this.muscleType=type;

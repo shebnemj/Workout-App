@@ -7,9 +7,10 @@ public abstract class Exercise {
     private String exerciseName;
     private String description;
     private int imageLink;
-    private String link;
-    private String notes;
+    //private String link;
+    //private String notes;
     private String equipment;
+    private String type;
 
     public static ArrayList<Exercise> exercises =initArrayList();
 
@@ -55,13 +56,14 @@ public abstract class Exercise {
         return images;
     }
 
-    public Exercise(String name, String descrip, int imglink, String equip) {
+    public Exercise(String name, String descrip, int imglink, String equip,String type) {
         setExerciseName(name);
         setDescription(descrip);
         setImage(imglink);
         setEquipment(equip);
         ExerciseStats stats = new ExerciseStats();
         stats.setCount(0);
+        this.type=type;
     }
 
     public String getExerciseName() {
@@ -76,11 +78,13 @@ public abstract class Exercise {
         return this.imageLink;
     }
 
-    public String getLink() { return this.link; }
+    /*public String getLink() {
+        return this.link;
+    }*/
 
-    public String getNotes() {
+    /*public String getNotes() {
         return this.notes;
-    }
+    }*/
 
     public String getEquipment() { return this.equipment; }
 
@@ -96,13 +100,13 @@ public abstract class Exercise {
         this.imageLink = imglink;
     }
 
-    public void setLink(String hyperlink) {
+    /*public void setLink(String hyperlink) {
         this.link = hyperlink;
-    }
+    }*/
 
-    public void setNotes(String newnote) {
+    /*public void setNotes(String newnote) {
         this.notes = newnote;
-    }
+    }*/
 
     public void setEquipment(String equip) {
         this.equipment = equip;
