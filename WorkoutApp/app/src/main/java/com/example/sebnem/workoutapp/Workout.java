@@ -10,27 +10,31 @@ public class Workout {
     private int duration;
     private ArrayList<Exercise> exerciseList;
 
-    public static final Workout[] workouts={
-            new Workout("HIIT",true, "Okay", 10),
-            new Workout("Lifts",false, "is this gonna work i wonder", 15),
-            new Workout("Lifts",false, "is this gonna work i wonder", 15),
-            new Workout("Lifts",false, "is this gonna work i wonder", 15),
-            new Workout("Lifts",false, "is this gonna work i wonder", 15),
-            new Workout("Lifts",false, "is this gonna work i wonder", 15),
-            new Workout("Lifts",false, "is this gonna work i wonder", 15),
-            new Workout("Lifts",false, "is this gonna work i wonder", 15),
-            new Workout("Yoga",false, "okkkkkk", 15)
-    };
+    public static ArrayList<Workout> workouts= initArrayList();
+
+    private static ArrayList<Workout> initArrayList(){
+        ArrayList<Workout> list =new ArrayList<>();
+        list.add(new Workout("HIIT",true, "Okay", 10));
+        list.add(new Workout("Lifts",false, "is this gonna work i wonder", 15));
+        list.add(new Workout("Lifts",false, "is this gonna work i wonder", 15));
+        list.add(new Workout("Lifts",false, "is this gonna work i wonder", 15));
+        list.add(new Workout("Lifts",false, "is this gonna work i wonder", 15));
+        list.add(new Workout("Lifts",false, "is this gonna work i wonder", 15));
+        list.add(new Workout("Lifts",false, "is this gonna work i wonder", 15));
+        list.add(new Workout("Lifts",false, "is this gonna work i wonder", 15));
+        list.add(new Workout("Yoga",false, "okkkkkk", 15));
+        return list;
+    }
 
     public static String[] wNames(){
-        String[] names=new String[workouts.length];
+        String[] names=new String[workouts.size()];
         for (int i=0;i<names.length;i++){
-            names[i]=workouts[i].getWorkoutName();
+            names[i]=workouts.get(i).getWorkoutName();
         }
         return names;
     }
     public static Integer[] wImages(){
-        Integer[] images=new Integer[workouts.length];
+        Integer[] images=new Integer[workouts.size()];
         for (int i=0;i<images.length;i++){
             images[i]=R.drawable.hiit;
         }

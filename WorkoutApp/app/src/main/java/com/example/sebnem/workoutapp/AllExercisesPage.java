@@ -15,10 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AllExercisesPage extends AppCompatActivity {
-
-
-    Exercise[] exercises = Exercise.exercises;
-
     String[] nameArray = Exercise.eNames();
 
     Integer[] imageArray = Exercise.eImages();
@@ -39,18 +35,13 @@ public class AllExercisesPage extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.listview2ID);
         listView.setAdapter(whatever);
 
-        final List<Exercise> list;
-
-        list = new ArrayList<Exercise>();
-
-        for(int i=0;i<exercises.length;i++){
-            list.add(exercises[i]);
-        }
+        final List<Exercise> list=Exercise.exercises;
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position,
                                     long id) {
+
 
                 switch(list.get(position).getType()){
 
@@ -97,6 +88,8 @@ public class AllExercisesPage extends AppCompatActivity {
             }
         });
     }
+
+    //Integer reps=((Muscle)list.get(position)).getReps();
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

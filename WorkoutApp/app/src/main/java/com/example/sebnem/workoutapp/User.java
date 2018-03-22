@@ -20,8 +20,6 @@ public class User {
         exerciseList = new ArrayList<>();
         exerciseList = setExercises();
         workoutList = setWorkouts();
-
-
     }
 
     public static User getInstance() {
