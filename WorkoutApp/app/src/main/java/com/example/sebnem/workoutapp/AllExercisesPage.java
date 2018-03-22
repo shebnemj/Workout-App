@@ -52,18 +52,48 @@ public class AllExercisesPage extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position,
                                     long id) {
 
-                Intent intent = new Intent(AllExercisesPage.this, ExerciseDetailsPage.class);
-                String message = list.get(position).getExerciseName();
-                String message2 = list.get(position).getDescription();
-                String equip = list.get(position).getEquipment();
-                Integer image = list.get(position).getImage();
-                Integer reps = ((Muscle)list.get(position)).getReps(); //what?? solve this -- basically when i do .getReps() it doesn't go through because list is exercise, not muscle..?
-                intent.putExtra("animal", message);
-                intent.putExtra("species", message2);
-                intent.putExtra("maybimage", image);
-                intent.putExtra("equipment", equip);
-                intent.putExtra("reps", reps);
-                startActivity(intent);
+                switch(list.get(position).getType()){
+
+                    case "Cardio":
+
+                        Intent intent = new Intent(AllExercisesPage.this, ExerciseDetailsPage.class);
+                        String message = list.get(position).getExerciseName();
+                        String message2 = list.get(position).getDescription();
+                        String equip = list.get(position).getEquipment();
+                        Integer image = list.get(position).getImage();
+                        //Integer reps = ((Muscle)list.get(position)).getReps(); //what?? solve this -- basically when i do .getReps() it doesn't go through because list is exercise, not muscle..?
+                        String type = list.get(position).getType();
+                        intent.putExtra("animal", message);
+                        intent.putExtra("species", message2);
+                        intent.putExtra("maybimage", image);
+                        intent.putExtra("equipment", equip);
+                        intent.putExtra("TYPE", type);
+                        //intent.putExtra("reps", reps);
+                        startActivity(intent);
+
+                        break;
+
+                    case "Muscle":
+
+                        intent = new Intent(AllExercisesPage.this, ExerciseDetailsPage.class);
+                        message = list.get(position).getExerciseName();
+                        message2 = list.get(position).getDescription();
+                        equip = list.get(position).getEquipment();
+                        image = list.get(position).getImage();
+                        type = list.get(position).getType();
+                        //Integer reps = ((Muscle)list.get(position)).getReps(); //what?? solve this -- basically when i do .getReps() it doesn't go through because list is exercise, not muscle..?
+                        intent.putExtra("animal", message);
+                        intent.putExtra("species", message2);
+                        intent.putExtra("maybimage", image);
+                        intent.putExtra("equipment", equip);
+                        intent.putExtra("TYPE", type);
+                        //intent.putExtra("reps", reps);
+                        startActivity(intent);
+
+                        break;
+
+                }
+
             }
         });
     }

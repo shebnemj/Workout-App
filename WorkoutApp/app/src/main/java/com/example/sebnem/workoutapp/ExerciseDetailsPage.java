@@ -15,32 +15,74 @@ public class ExerciseDetailsPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_exercise_muscle_details);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
+        String exerciseType = getIntent().getStringExtra("TYPE");
 
-        String savedExtra = getIntent().getStringExtra("animal");
-        TextView myText = (TextView) findViewById(R.id.textID2);
-        myText.setText(savedExtra);
+        switch(exerciseType){
 
-        String exerciseDescripTest = getIntent().getStringExtra("species");
-        TextView myText2 = (TextView) findViewById(R.id.textID14);
-        myText2.setText(exerciseDescripTest);
+            case "Cardio":
 
-        String exerciseEquipment = getIntent().getStringExtra("equipment");
-        TextView myText3 = (TextView) findViewById(R.id.textID16);
-        myText3.setText(exerciseEquipment);
+                setContentView(R.layout.activity_exercise_cardio_details);
 
-        int exerciseReps = getIntent().getIntExtra("reps",0);
-        TextView myText4 = (TextView) findViewById(R.id.textID30);
-        myText4.setText(exerciseReps);
+                Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+                setSupportActionBar(toolbar);
+                ActionBar actionBar = getSupportActionBar();
+                actionBar.setDisplayHomeAsUpEnabled(true);
 
-        Integer muscleImage = getIntent().getIntExtra("maybimage",0);
-        ImageView imageView = (ImageView) findViewById(R.id.imageView3);
-        imageView.setImageResource(muscleImage);
+                String savedExtraa = getIntent().getStringExtra("animal");
+                TextView myTextt = (TextView) findViewById(R.id.textID20);
+                myTextt.setText(savedExtraa);
+
+                String exerciseDescripTestt = getIntent().getStringExtra("species");
+                TextView myTextt2 = (TextView) findViewById(R.id.textID140);
+                myTextt2.setText(exerciseDescripTestt);
+
+                String exerciseEquipmentt = getIntent().getStringExtra("equipment");
+                TextView myTextt3 = (TextView) findViewById(R.id.textID160);
+                myTextt3.setText(exerciseEquipmentt);
+
+                //int exerciseReps = getIntent().getIntExtra("reps",0);
+                //TextView myText4 = (TextView) findViewById(R.id.textID30);
+                //myText4.setText(exerciseReps);
+
+                Integer cardioImage = getIntent().getIntExtra("maybimage",0);
+                ImageView imageVieww = (ImageView) findViewById(R.id.imageView4);
+                imageVieww.setImageResource(cardioImage);
+
+                break;
+
+            case "Muscle":
+
+                setContentView(R.layout.activity_exercise_muscle_details);
+
+                Toolbar toolbarr = (Toolbar) findViewById(R.id.toolbar);
+                setSupportActionBar(toolbarr);
+                ActionBar actionBarr = getSupportActionBar();
+                actionBarr.setDisplayHomeAsUpEnabled(true);
+
+                String savedExtra = getIntent().getStringExtra("animal");
+                TextView myText = (TextView) findViewById(R.id.textID2);
+                myText.setText(savedExtra);
+
+                String exerciseDescripTest = getIntent().getStringExtra("species");
+                TextView myText2 = (TextView) findViewById(R.id.textID14);
+                myText2.setText(exerciseDescripTest);
+
+                String exerciseEquipment = getIntent().getStringExtra("equipment");
+                TextView myText3 = (TextView) findViewById(R.id.textID16);
+                myText3.setText(exerciseEquipment);
+
+                //int exerciseReps = getIntent().getIntExtra("reps",0);
+                //TextView myText4 = (TextView) findViewById(R.id.textID30);
+                //myText4.setText(exerciseReps);
+
+                Integer muscleImage = getIntent().getIntExtra("maybimage",0);
+                ImageView imageView = (ImageView) findViewById(R.id.imageView3);
+                imageView.setImageResource(muscleImage);
+
+                break;
+
+        }
     }
 
     @Override

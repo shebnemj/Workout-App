@@ -37,6 +37,8 @@ public abstract class Exercise {
             new Muscle("Wide Grip Lat Pull Down","",R.drawable.wide_grip_lat_pull_down,"")
     };
 
+
+
     public static String[] eNames(){
         String[] names=new String[exercises.length];
         for (int i=0;i<names.length;i++){
@@ -105,4 +107,11 @@ public abstract class Exercise {
         this.equipment = equip;
     }
 
+    public String getType(){
+
+        return "Muscle";
+    }
+
 }
+
+
