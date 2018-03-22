@@ -14,9 +14,6 @@ import android.widget.ListView;
 import java.util.*;
 
 public class AllWorkoutsPage extends AppCompatActivity {
-
-    Workout[] workouts=Workout.workouts;
-
     String[] nameArray = Workout.wNames();
 
     Integer[] imageArray = Workout.wImages();
@@ -35,13 +32,7 @@ public class AllWorkoutsPage extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.listviewID);
         listView.setAdapter(whatever);
 
-        final List<Workout> list;
-
-        list = new ArrayList<Workout>();
-
-        for(int i=0;i<workouts.length;i++){
-            list.add(workouts[i]);
-        }
+        final List<Workout> list=Workout.workouts;
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
