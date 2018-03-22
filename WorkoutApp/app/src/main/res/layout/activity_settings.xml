@@ -5,42 +5,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.sebnem.workoutapp.SettingsActivity">
+
     <include
         layout="@layout/toolbar_main"
         android:id="@+id/toolbar" />
 
     <TextView
         android:id="@+id/textID900"
-        android:layout_width="67dp"
-        android:layout_height="25dp"
-        android:paddingLeft="10dp"
+        android:layout_width="51dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="16dp"
         android:text="Units"
-        android:textAlignment="textStart"
+        android:textAlignment="textEnd"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/unitchanger"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintVertical_bias="0.060000002" />
+        app:layout_constraintVertical_bias="0.041" />
 
     <LinearLayout
         android:id="@+id/unitchanger"
-        android:layout_width="234dp"
-        android:layout_height="48dp"
+        android:layout_width="202dp"
+        android:layout_height="49dp"
         android:orientation="horizontal"
         android:paddingTop="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.384"
         app:layout_constraintStart_toEndOf="@+id/textID900"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintVertical_bias="0.043">
+        app:layout_constraintVertical_bias="0.021">
 
         <TextView
             android:layout_width="28dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:paddingRight="5dp"
             android:text="Metric"
             android:textAlignment="textEnd" />
 
@@ -55,6 +55,7 @@
             android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:paddingLeft="5dp"
             android:text="Imperial"
             android:textAlignment="textStart"
             app:layout_constraintEnd_toEndOf="parent" />

@@ -24,14 +24,28 @@
         app:layout_constraintHorizontal_bias="0.901"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintVertical_bias="0.582" />
+        app:layout_constraintVertical_bias="0.543" />
 
     <TextView
         android:id="@+id/textID13"
-        android:layout_width="142dp"
-        android:layout_height="29dp"
+        android:layout_width="94dp"
+        android:layout_height="27dp"
         android:text="Minutes"
         android:textAlignment="textEnd"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.815"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintVertical_bias="0.21" />
+
+    <TextView
+        android:id="@+id/textID2"
+        android:layout_width="142dp"
+        android:layout_height="70dp"
+        android:text="Exercise Name"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -39,21 +53,7 @@
         app:layout_constraintHorizontal_bias="0.926"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintVertical_bias="0.321" />
-
-    <TextView
-        android:id="@+id/textID2"
-        android:layout_width="142dp"
-        android:layout_height="29dp"
-        android:text="Exercise Name"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.073"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintVertical_bias="0.321" />
+        app:layout_constraintVertical_bias="0.045" />
 
     <TextView
         android:id="@+id/textID12"
@@ -67,7 +67,7 @@
         app:layout_constraintHorizontal_bias="0.066"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintVertical_bias="0.522" />
+        app:layout_constraintVertical_bias="0.487" />
 
     <TextView
         android:id="@+id/textID11"
@@ -83,7 +83,7 @@
         app:layout_constraintHorizontal_bias="0.901"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintVertical_bias="0.416" />
+        app:layout_constraintVertical_bias="0.383" />
 
     <TextView
         android:id="@+id/textID10"
@@ -97,7 +97,7 @@
         app:layout_constraintHorizontal_bias="0.066"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintVertical_bias="0.416" />
+        app:layout_constraintVertical_bias="0.383" />
 
     <TextView
         android:id="@+id/textID16"
@@ -113,7 +113,7 @@
         app:layout_constraintHorizontal_bias="0.901"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintVertical_bias="0.729" />
+        app:layout_constraintVertical_bias="0.679" />
 
     <TextView
         android:id="@+id/textID17"
@@ -127,14 +127,15 @@
         app:layout_constraintHorizontal_bias="0.066"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintVertical_bias="0.729" />
+        app:layout_constraintVertical_bias="0.679" />
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="0dp"
-        android:layout_height="140dp"
+        android:layout_width="184dp"
+        android:layout_height="159dp"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:srcCompat="@drawable/yogamatt" />
@@ -153,7 +154,7 @@
         app:layout_constraintHorizontal_bias="0.901"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintVertical_bias="0.822" />
+        app:layout_constraintVertical_bias="0.787" />
 
     <TextView
         android:id="@+id/textID90"
@@ -167,6 +168,6 @@
         app:layout_constraintHorizontal_bias="0.066"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintVertical_bias="0.822" />
+        app:layout_constraintVertical_bias="0.787" />
 
 </android.support.constraint.ConstraintLayout>

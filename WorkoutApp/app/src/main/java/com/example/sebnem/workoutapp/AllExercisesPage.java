@@ -11,10 +11,13 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class AllExercisesPage extends AppCompatActivity {
 
 
-    Exercise[] exercises=Exercise.exercises;
+    Exercise[] exercises = Exercise.exercises;
 
     String[] nameArray = Exercise.eNames();
 
@@ -26,13 +29,23 @@ public class AllExercisesPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.all_exercises);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
+
         CustomExerciseListAdapter whatever = new CustomExerciseListAdapter(this, nameArray, imageArray);
         listView = (ListView) findViewById(R.id.listview2ID);
         listView.setAdapter(whatever);
+
+        final List<Exercise> list;
+
+        list = new ArrayList<Exercise>();
+
+        for(int i=0;i<exercises.length;i++){
+            list.add(exercises[i]);
+        }
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -40,8 +53,16 @@ public class AllExercisesPage extends AppCompatActivity {
                                     long id) {
 
                 Intent intent = new Intent(AllExercisesPage.this, ExerciseDetailsPage.class);
-                String message = nameArray[position];
+                String message = list.get(position).getExerciseName();
+                String message2 = list.get(position).getDescription();
+                String equip = list.get(position).getEquipment();
+                Integer image = list.get(position).getImage();
+                Integer reps = ((Muscle)list.get(position)).getReps(); //what?? solve this -- basically when i do .getReps() it doesn't go through because list is exercise, not muscle..?
                 intent.putExtra("animal", message);
+                intent.putExtra("species", message2);
+                intent.putExtra("maybimage", image);
+                intent.putExtra("equipment", equip);
+                intent.putExtra("reps", reps);
                 startActivity(intent);
             }
         });
