@@ -38,6 +38,10 @@ public class User {
         return userWeight;
     }
 
+    public ArrayList<Exercise> getExerciseList() {
+        return exerciseList;
+    }
+
     public void addWeight(double weight) {
         userWeight.add((double) weight);
     }
@@ -270,32 +274,30 @@ public class User {
 
     public ArrayList<Exercise> setExercises()
     {
-        ArrayList<Exercise> exercisesSaved = new ArrayList<Exercise>();
-        //exercisesSaved.add(new Cardio("TreadmillExercise", "Running", "Treadmill", 4, 10, 4.1 ));
-        //System.out.println("added");
-        try
-        {
-            Scanner input = new Scanner(new File("src/ExerciseList.txt"));
-            while (input.hasNext()){
-                String line =input.nextLine();
-                String [] temp = line.split("#");
-                if (temp[0].equals("c"))
-                {
-                    exercisesSaved.add(new Cardio(temp[1], temp[2], 3, temp[3]));
-                }
-                else if (temp[0].equals("m"))
-                {
-                    exercisesSaved.add(new Muscle(temp[1], temp[2], 4, temp[3]));
-                }
-            }
-            return exercisesSaved;
-        }
-
-        catch(IOException e)
-        {
-            System.out.println("ERROR: The data has not been imported successfully");
-        }
-        return exercisesSaved;
+        ArrayList<Exercise> exs=new ArrayList<>();
+        exs.add(new Muscle("Barbell Shrugs","",R.drawable.barbell_shrugs,"Barbell"));
+        exs.add(new Muscle("Bench Press","",R.drawable.bench_press,"Bench"));
+        exs.add(new Muscle("Butterfly Machine","",R.drawable.butterfly_machine,""));
+        exs.add(new Muscle("Cable Crossover","",R.drawable.cable_crossover,""));
+        exs.add(new Muscle("Chest Dips","",R.drawable.chest_dips,""));
+        exs.add(new Muscle("Chin Ups","",R.drawable.chin_ups,""));
+        exs.add(new Muscle("Dumbbell Flys","",R.drawable.dumbbell_flys,"Dumbbell"));
+        exs.add(new Muscle("Dumbbell Lunges","",R.drawable.dumbbell_lunges,"Dumbbell"));
+        exs.add(new Muscle("Front Dumbbell Raise","",R.drawable.front_dumbbell_raise,"Dumbbell"));
+        exs.add(new Muscle("Leg Extensions","",R.drawable.leg_extensions,""));
+        exs.add(new Muscle("Machine Bench Press","",R.drawable.machine_bench_press,""));
+        exs.add(new Muscle("Narrow Stance Leg Press","",R.drawable.narrow_stance_leg_press,""));
+        exs.add(new Muscle("Pull Ups","",R.drawable.pull_ups,"N/A"));
+        exs.add(new Muscle("Push Ups","",R.drawable.push_ups,"N/A"));
+        exs.add(new Muscle("Seated Barbell Shoulder Press","",R.drawable.seated_barbell_shoulder_press,"Barbell"));
+        exs.add(new Muscle("Seated Cable Rows","",R.drawable.seated_cable_rows,""));
+        exs.add(new Muscle("Seated Leg Curl","",R.drawable.seated_leg_curl,""));
+        exs.add(new Muscle("Seated Shoulder Press Machine","",R.drawable.seated_shoulder_press_machine,""));
+        exs.add(new Muscle("Shoulder Shrugs","",R.drawable.shoulder_shrugs,""));
+        exs.add(new Muscle("Squats Using Dumbbells","",R.drawable.squats_using_dumbbells,"Dumbbells"));
+        exs.add(new Muscle("Upright Cable Row","",R.drawable.upright_cable_row,""));
+        exs.add(new Muscle("Wide Grip Lat Pull Down","",R.drawable.wide_grip_lat_pull_down,""));
+        return exs;
     }
 
     public ArrayList<Workout> setWorkouts()

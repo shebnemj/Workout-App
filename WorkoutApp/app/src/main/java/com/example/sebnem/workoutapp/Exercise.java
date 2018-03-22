@@ -12,9 +12,10 @@ public abstract class Exercise {
     private String equipment;
     private String type;
 
-    public static ArrayList<Exercise> exercises =initArrayList();
+    public static ArrayList<Exercise> exercises = User.getInstance().getExerciseList();
+   // public static ArrayList<Exercise> exercises =initArrayList();
 
-    private static ArrayList<Exercise> initArrayList(){
+    /*private static ArrayList<Exercise> initArrayList(){
         ArrayList<Exercise> exs=new ArrayList<>();
         exs.add(new Muscle("Barbell Shrugs","",R.drawable.barbell_shrugs,"Barbell"));
         exs.add(new Muscle("Bench Press","",R.drawable.bench_press,"Bench"));
@@ -41,7 +42,7 @@ public abstract class Exercise {
         return exs;
     }
 
-
+*/
 
     public static String[] eNames(){
         String[] names=new String[exercises.size()];

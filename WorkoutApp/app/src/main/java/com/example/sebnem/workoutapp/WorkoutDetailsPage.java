@@ -53,6 +53,10 @@ public class WorkoutDetailsPage extends AppCompatActivity {
                 intent = new Intent(this, ProfileActivity.class);
                 startActivity(intent);
                 return true;
+            case R.id.action_edit:
+                intent = new Intent(this, EditWorkoutActivity.class);
+                startActivity(intent);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
