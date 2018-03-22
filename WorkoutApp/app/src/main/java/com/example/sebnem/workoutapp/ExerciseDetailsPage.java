@@ -34,9 +34,9 @@ public class ExerciseDetailsPage extends AppCompatActivity {
         TextView myText3 = (TextView) findViewById(R.id.textID16);
         myText3.setText(exerciseEquipment);
 
-        int exerciseReps = getIntent().getIntExtra("reps",0);
-        TextView myText4 = (TextView) findViewById(R.id.textID30);
-        myText4.setText(exerciseReps);
+        //int exerciseReps = getIntent().getIntExtra("reps",0);
+        //TextView myText4 = (TextView) findViewById(R.id.textID30);
+        //myText4.setText(exerciseReps);
 
         Integer muscleImage = getIntent().getIntExtra("maybimage",0);
         ImageView imageView = (ImageView) findViewById(R.id.imageView3);

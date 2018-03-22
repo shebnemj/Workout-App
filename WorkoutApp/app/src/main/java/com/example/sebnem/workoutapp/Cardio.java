@@ -7,6 +7,13 @@ public class Cardio extends Exercise {
 
     public Cardio(String name, String descrip, int imglink, String equip) {
         super(name,descrip,imglink,equip);
+        duration=1000*5;
+        distance=5.0f;
+    }
+    public Cardio(String name, String descrip, int imglink, String equip,int dur,float dist) {
+        super(name,descrip,imglink,equip);
+        this.duration=dur;
+        this.distance=dist;
     }
 
     public int getDuration() {

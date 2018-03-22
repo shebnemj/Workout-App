@@ -15,10 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AllExercisesPage extends AppCompatActivity {
-
-
-    Exercise[] exercises = Exercise.exercises;
-
     String[] nameArray = Exercise.eNames();
 
     Integer[] imageArray = Exercise.eImages();
@@ -39,13 +35,7 @@ public class AllExercisesPage extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.listview2ID);
         listView.setAdapter(whatever);
 
-        final List<Exercise> list;
-
-        list = new ArrayList<Exercise>();
-
-        for(int i=0;i<exercises.length;i++){
-            list.add(exercises[i]);
-        }
+        final List<Exercise> list=Exercise.exercises;
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -57,16 +47,18 @@ public class AllExercisesPage extends AppCompatActivity {
                 String message2 = list.get(position).getDescription();
                 String equip = list.get(position).getEquipment();
                 Integer image = list.get(position).getImage();
-                Integer reps = ((Muscle)list.get(position)).getReps(); //what?? solve this -- basically when i do .getReps() it doesn't go through because list is exercise, not muscle..?
+                //Integer reps = ((Muscle)list.get(position)).getReps(); //what?? solve this -- basically when i do .getReps() it doesn't go through because list is exercise, not muscle..?
                 intent.putExtra("animal", message);
                 intent.putExtra("species", message2);
                 intent.putExtra("maybimage", image);
                 intent.putExtra("equipment", equip);
-                intent.putExtra("reps", reps);
+                //intent.putExtra("reps", reps);
                 startActivity(intent);
             }
         });
     }
+
+    //Integer reps=((Muscle)list.get(position)).getReps();
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

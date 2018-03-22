@@ -87,6 +87,7 @@ public class AllWorkoutsPage extends AppCompatActivity {
             case R.id.action_add:
                  intent = new Intent(this, AddWorkoutActivity.class);
                  startActivity(intent);
+                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
