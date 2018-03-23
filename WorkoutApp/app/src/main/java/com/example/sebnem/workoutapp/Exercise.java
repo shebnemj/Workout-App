@@ -17,6 +17,7 @@ public abstract class Exercise {
 
     /*private static ArrayList<Exercise> initArrayList(){
         ArrayList<Exercise> exs=new ArrayList<>();
+        exs.add(new Cardio("example cardio","example cardio exercise",R.drawable.dumbbell,"example"));
         exs.add(new Muscle("Barbell Shrugs","",R.drawable.barbell_shrugs,"Barbell"));
         exs.add(new Muscle("Bench Press","",R.drawable.bench_press,"Bench"));
         exs.add(new Muscle("Butterfly Machine","",R.drawable.butterfly_machine,""));

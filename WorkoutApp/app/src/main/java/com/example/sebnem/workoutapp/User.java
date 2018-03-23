@@ -6,8 +6,8 @@ import java.io.*;
 
 public class User {
 
-    private static User instance = new User();
-    private String userName;
+    private static User instance;
+    private String userName="John";
     private ArrayList<Double> userWeight;
     private ArrayList<Double> userHeight;
     private ArrayList<Workout> workoutList;
@@ -20,9 +20,24 @@ public class User {
         exerciseList = new ArrayList<>();
         exerciseList = setExercises();
         workoutList = setWorkouts();
+
+        userHeight.add(1.795);
+        userHeight.add(1.8);
+        userHeight.add(1.8);
+        userHeight.add(1.8);
+        userHeight.add(1.8);
+
+        userWeight.add(71.7);
+        userWeight.add(69.8);
+        userWeight.add(67.5);
+        userWeight.add(67.0);
+        userWeight.add(68.2);
     }
 
     public static User getInstance() {
+        if(instance == null) {
+            instance = new User();
+        }
         return instance;
     }
 
@@ -278,25 +293,25 @@ public class User {
         exs.add(new Muscle("Barbell Shrugs","",R.drawable.barbell_shrugs,"Barbell"));
         exs.add(new Muscle("Bench Press","",R.drawable.bench_press,"Bench"));
         exs.add(new Muscle("Butterfly Machine","",R.drawable.butterfly_machine,""));
-//        exs.add(new Muscle("Cable Crossover","",R.drawable.cable_crossover,""));
-//        exs.add(new Muscle("Chest Dips","",R.drawable.chest_dips,""));
-//        exs.add(new Muscle("Chin Ups","",R.drawable.chin_ups,""));
-//        exs.add(new Muscle("Dumbbell Flys","",R.drawable.dumbbell_flys,"Dumbbell"));
-//        exs.add(new Muscle("Dumbbell Lunges","",R.drawable.dumbbell_lunges,"Dumbbell"));
-//        exs.add(new Muscle("Front Dumbbell Raise","",R.drawable.front_dumbbell_raise,"Dumbbell"));
-//        exs.add(new Muscle("Leg Extensions","",R.drawable.leg_extensions,""));
-//        exs.add(new Muscle("Machine Bench Press","",R.drawable.machine_bench_press,""));
-//        exs.add(new Muscle("Narrow Stance Leg Press","",R.drawable.narrow_stance_leg_press,""));
-//        exs.add(new Muscle("Pull Ups","",R.drawable.pull_ups,"N/A"));
-//        exs.add(new Muscle("Push Ups","",R.drawable.push_ups,"N/A"));
-//        exs.add(new Muscle("Seated Barbell Shoulder Press","",R.drawable.seated_barbell_shoulder_press,"Barbell"));
-//        exs.add(new Muscle("Seated Cable Rows","",R.drawable.seated_cable_rows,""));
-//        exs.add(new Muscle("Seated Leg Curl","",R.drawable.seated_leg_curl,""));
-//        exs.add(new Muscle("Seated Shoulder Press Machine","",R.drawable.seated_shoulder_press_machine,""));
-//        exs.add(new Muscle("Shoulder Shrugs","",R.drawable.shoulder_shrugs,""));
-//        exs.add(new Muscle("Squats Using Dumbbells","",R.drawable.squats_using_dumbbells,"Dumbbells"));
-//        exs.add(new Muscle("Upright Cable Row","",R.drawable.upright_cable_row,""));
-//        exs.add(new Muscle("Wide Grip Lat Pull Down","",R.drawable.wide_grip_lat_pull_down,""));
+        exs.add(new Muscle("Cable Crossover","",R.drawable.cable_crossover,""));
+        exs.add(new Muscle("Chest Dips","",R.drawable.chest_dips,""));
+        exs.add(new Muscle("Chin Ups","",R.drawable.chin_ups,""));
+        exs.add(new Muscle("Dumbbell Flys","",R.drawable.dumbbell_flys,"Dumbbell"));
+        exs.add(new Muscle("Dumbbell Lunges","",R.drawable.dumbbell_lunges,"Dumbbell"));
+        exs.add(new Muscle("Front Dumbbell Raise","",R.drawable.front_dumbbell_raise,"Dumbbell"));
+        exs.add(new Muscle("Leg Extensions","",R.drawable.leg_extensions,""));
+        exs.add(new Muscle("Machine Bench Press","",R.drawable.machine_bench_press,""));
+        exs.add(new Muscle("Narrow Stance Leg Press","",R.drawable.narrow_stance_leg_press,""));
+        exs.add(new Muscle("Pull Ups","",R.drawable.pull_ups,"N/A"));
+        exs.add(new Muscle("Push Ups","",R.drawable.push_ups,"N/A"));
+        exs.add(new Muscle("Seated Barbell Shoulder Press","",R.drawable.seated_barbell_shoulder_press,"Barbell"));
+        exs.add(new Muscle("Seated Cable Rows","",R.drawable.seated_cable_rows,""));
+        exs.add(new Muscle("Seated Leg Curl","",R.drawable.seated_leg_curl,""));
+        exs.add(new Muscle("Seated Shoulder Press Machine","",R.drawable.seated_shoulder_press_machine,""));
+        exs.add(new Muscle("Shoulder Shrugs","",R.drawable.shoulder_shrugs,""));
+        exs.add(new Muscle("Squats Using Dumbbells","",R.drawable.squats_using_dumbbells,"Dumbbells"));
+        exs.add(new Muscle("Upright Cable Row","",R.drawable.upright_cable_row,""));
+        exs.add(new Muscle("Wide Grip Lat Pull Down","",R.drawable.wide_grip_lat_pull_down,""));
         return exs;
     }
 
