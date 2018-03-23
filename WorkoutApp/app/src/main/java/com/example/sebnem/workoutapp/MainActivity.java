@@ -18,7 +18,9 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     Workout[] workouts = {
-            User.work
+            Workout.workouts.get(0),
+            Workout.workouts.get(1),
+            Workout.workouts.get(2)
     };
 
     String[] nameArray = {workouts[0].getWorkoutName(),workouts[1].getWorkoutName(),workouts[2].getWorkoutName()};
