@@ -10,9 +10,10 @@ public class Workout {
     private int duration;
     private ArrayList<Exercise> exerciseList;
 
-    public static ArrayList<Workout> workouts= initArrayList();
+    public static ArrayList<Workout> workouts= User.getInstance().getWorkoutList();
+    //public static ArrayList<Workout> workouts= initArrayList();
 
-    private static ArrayList<Workout> initArrayList(){
+    /*private static ArrayList<Workout> initArrayList(){s
         ArrayList<Workout> list =new ArrayList<>();
         list.add(new Workout("HIIT",true, "Okay", 10));
         list.add(new Workout("Lifts",false, "is this gonna work i wonder", 15));
@@ -24,7 +25,7 @@ public class Workout {
         list.add(new Workout("Lifts",false, "is this gonna work i wonder", 15));
         list.add(new Workout("Yoga",false, "okkkkkk", 15));
         return list;
-    }
+    }*/
 
     public static String[] wNames(){
         String[] names=new String[workouts.size()];
