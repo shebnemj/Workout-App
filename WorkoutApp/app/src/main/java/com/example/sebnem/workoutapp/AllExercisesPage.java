@@ -31,7 +31,7 @@ public class AllExercisesPage extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-       showData();
+        showData();
     }
 
     protected void showData(){
