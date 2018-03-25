@@ -55,10 +55,10 @@
                 android:onClick="onClickBtn"
                 android:text="Add weight"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/editText" />
+                app:layout_constraintTop_toTopOf="@+id/editWODescripEW" />
 
             <EditText
-                android:id="@+id/editText"
+                android:id="@+id/editWODescripEW"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
@@ -80,7 +80,7 @@
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText" />
+                app:layout_constraintTop_toBottomOf="@+id/editWODescripEW" />
 
             <com.jjoe64.graphview.GraphView
                 android:id="@+id/bmiGraph"

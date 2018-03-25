@@ -5,17 +5,13 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.text.method.ScrollingMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -25,6 +21,8 @@ public class WorkoutDetailsPage extends AppCompatActivity implements View.OnClic
     String[] nameArray = Exercise.eNames();
 
     Integer[] imageArray = Exercise.eImages();
+
+    final List<Workout> workoutlist=Workout.workouts;
 
     ListView listView;
 
@@ -138,6 +136,20 @@ public class WorkoutDetailsPage extends AppCompatActivity implements View.OnClic
                 return true;
             case R.id.action_edit:
                 intent = new Intent(this, EditWorkoutActivity.class);
+
+                
+                String workoutname = workoutlist.get(i);
+                String message = workoutlist.get(position).getExerciseName();
+                String message2 = list.get(position).getDescription();
+                String equip = list.get(position).getEquipment();
+                Integer image = list.get(position).getImage();
+                String type = list.get(position).getType();
+                intent.putExtra("name", message);
+                intent.putExtra("description", message2);
+                intent.putExtra("maybimage", image);
+                intent.putExtra("equipment", equip);
+                intent.putExtra("TYPE", type);
+
                 startActivity(intent);
                 return true;
             default:

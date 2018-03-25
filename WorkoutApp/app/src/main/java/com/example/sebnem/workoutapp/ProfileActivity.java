@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.jjoe64.graphview.DefaultLabelFormatter;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.Viewport;
 import com.jjoe64.graphview.series.DataPoint;
@@ -90,7 +89,7 @@ public class ProfileActivity extends AppCompatActivity {
     {
         GraphView weightGraph=(GraphView) findViewById(R.id.weightGraph);
         GraphView bmiGraph=(GraphView) findViewById(R.id.bmiGraph);
-        EditText editText =(EditText) findViewById(R.id.editText);
+        EditText editText =(EditText) findViewById(R.id.editWODescripEW);
 
         if(!editText.getText().toString().equals("")){
             yVal=Double.parseDouble(editText.getText().toString());

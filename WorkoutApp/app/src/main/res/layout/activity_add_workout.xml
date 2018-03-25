@@ -11,16 +11,16 @@
         android:id="@+id/toolbar" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/workoutNameEW"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Workout Name:"
-        app:layout_constraintBottom_toBottomOf="@+id/editText"
-        app:layout_constraintEnd_toStartOf="@+id/editText"
+        app:layout_constraintBottom_toBottomOf="@+id/editWODescripEW"
+        app:layout_constraintEnd_toStartOf="@+id/editWODescripEW"
         app:layout_constraintLeft_toLeftOf="parent" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editWODescripEW"
         android:layout_width="wrap_content"
         android:layout_height="46dp"
         android:layout_marginTop="40dp"
@@ -34,12 +34,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Description:"
-        app:layout_constraintBottom_toBottomOf="@+id/editText2"
-        app:layout_constraintEnd_toStartOf="@+id/editText2"
+        app:layout_constraintBottom_toBottomOf="@+id/editWONameEW"
+        app:layout_constraintEnd_toStartOf="@+id/editWONameEW"
         app:layout_constraintLeft_toLeftOf="parent" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/editWONameEW"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
@@ -47,7 +47,7 @@
         android:ems="10"
         android:inputType="textMultiLine"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/editWODescripEW" />
 
     <TextView
         android:id="@+id/textView4"
@@ -55,7 +55,7 @@
         android:layout_height="wrap_content"
         android:text="Type:"
         app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
-        app:layout_constraintEnd_toStartOf="@+id/editText2"
+        app:layout_constraintEnd_toStartOf="@+id/editWONameEW"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="@+id/linearLayout2" />
 
@@ -68,8 +68,8 @@
         android:orientation="horizontal"
         android:paddingTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/editText2"
-        app:layout_constraintTop_toBottomOf="@+id/editText2">
+        app:layout_constraintStart_toStartOf="@+id/editWONameEW"
+        app:layout_constraintTop_toBottomOf="@+id/editWONameEW">
 
         <TextView
             android:layout_width="40dp"
