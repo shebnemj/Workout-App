@@ -137,18 +137,18 @@ public class WorkoutDetailsPage extends AppCompatActivity implements View.OnClic
             case R.id.action_edit:
                 intent = new Intent(this, EditWorkoutActivity.class);
 
-                
+/*
                 String workoutname = workoutlist.get(i);
-                String message = workoutlist.get(position).getExerciseName();
-                String message2 = list.get(position).getDescription();
-                String equip = list.get(position).getEquipment();
+                //String message = workoutlist.get(position).getExerciseName();
+                //String message2 = list.get(position).getDescription();
+                //String equip = list.get(position).getEquipment();
                 Integer image = list.get(position).getImage();
                 String type = list.get(position).getType();
                 intent.putExtra("name", message);
                 intent.putExtra("description", message2);
                 intent.putExtra("maybimage", image);
                 intent.putExtra("equipment", equip);
-                intent.putExtra("TYPE", type);
+                intent.putExtra("TYPE", type);*/
 
                 startActivity(intent);
                 return true;
