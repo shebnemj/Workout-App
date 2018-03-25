@@ -9,13 +9,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.List;
 
-public class WorkoutDetailsPage extends AppCompatActivity {
+public class WorkoutDetailsPage extends AppCompatActivity implements View.OnClickListener {
 
     String[] nameArray = Exercise.eNames();
 
@@ -45,7 +46,17 @@ public class WorkoutDetailsPage extends AppCompatActivity {
         ImageView imageView = (ImageView) findViewById(R.id.imageView2);
         imageView.setImageResource(workoutImage);
 
+        ImageButton startWorkout = (ImageButton) findViewById(R.id.startWorkoutButton);
+        startWorkout.setOnClickListener(this);
+
         showData();
+
+    }
+
+    public void onClick(View view) {
+
+        Intent intent = new Intent(WorkoutDetailsPage.this, WorkoutStart.class);
+        startActivity(intent);
 
     }
 

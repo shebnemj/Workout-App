@@ -31,29 +31,29 @@
         android:layout_width="94dp"
         android:layout_height="27dp"
         android:text="Minutes"
-        android:textAlignment="textEnd"
+        android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.815"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imageView3"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintVertical_bias="0.21" />
+        app:layout_constraintVertical_bias="0.221" />
 
     <TextView
         android:id="@+id/textID2"
         android:layout_width="142dp"
         android:layout_height="70dp"
         android:text="Exercise Name"
+        android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.926"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toEndOf="@id/imageView3"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintVertical_bias="0.045" />
+        app:layout_constraintVertical_bias="0.047" />
 
     <TextView
         android:id="@+id/textID12"

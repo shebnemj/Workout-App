@@ -31,6 +31,11 @@
             android:parentActivityName=".AllExercisesPage" />
 
         <activity
+            android:name=".WorkoutStart"
+            android:label=""
+            android:parentActivityName=".WorkoutDetailsPage" />
+
+        <activity
             android:name=".WorkoutDetailsPage"
             android:label=""
             android:parentActivityName=".AllWorkoutsPage" />

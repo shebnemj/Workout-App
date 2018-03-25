@@ -47,9 +47,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.926"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintVertical_bias="0.321" />
+        app:layout_constraintStart_toEndOf="@+id/textID"
+        app:layout_constraintTop_toBottomOf="@+id/startWorkoutButton"
+        app:layout_constraintVertical_bias="0.043" />
 
     <TextView
         android:id="@+id/textID"
@@ -58,12 +58,12 @@
         android:text="Workout Name"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintBottom_toTopOf="@id/textID5"
+        app:layout_constraintEnd_toStartOf="@id/textID7"
+        app:layout_constraintHorizontal_bias="0.266"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintVertical_bias="0.321" />
+        app:layout_constraintVertical_bias="0.89" />
 
     <TextView
         android:id="@+id/textID4"
@@ -90,15 +90,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.066"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintVertical_bias="0.416" />
+        app:layout_constraintTop_toBottomOf="@id/imageView2"
+        app:layout_constraintVertical_bias="0.185" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="0dp"
         android:layout_height="140dp"
         android:scaleType="centerCrop"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton"
+        app:layout_constraintEnd_toStartOf="@+id/startWorkoutButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:srcCompat="@drawable/hiit" />
@@ -110,19 +110,21 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textID8" />
+        app:layout_constraintTop_toBottomOf="@+id/textID8" >
+
+    </ListView>
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/startWorkoutButton"
         android:layout_width="100dp"
         android:layout_height="140dp"
-        android:background="#990000"
-        android:tint="#ff0000"
+        android:background="@android:color/transparent"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.066"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:srcCompat="@android:drawable/ic_media_play" />
+        app:srcCompat="@drawable/longplaybutton" />
 
 
     <LinearLayout
