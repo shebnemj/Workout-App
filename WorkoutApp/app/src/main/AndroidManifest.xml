@@ -21,19 +21,19 @@
             android:label="@string/action_all_workouts"
             android:parentActivityName=".MainActivity" />
         <activity
-        android:name=".AllExercisesPage"
-        android:label="@string/action_all_exercises"
-        android:parentActivityName=".MainActivity" />
+            android:name=".AllExercisesPage"
+            android:label="@string/action_all_exercises"
+            android:parentActivityName=".MainActivity" />
 
         <activity
             android:name=".AddExerciseActivity"
-            android:label="@string/action_all_exercises"
+            android:label="Create Exercise"
             android:parentActivityName=".AllExercisesPage" />
 
         <activity
             android:name=".WorkoutStart"
             android:label=""
-            android:parentActivityName=".WorkoutDetailsPage" />
+            android:parentActivityName=".MainActivity" />
 
         <activity
             android:name=".WorkoutDetailsPage"
@@ -51,8 +51,14 @@
             android:name=".SettingsActivity"
             android:label="@string/action_settings"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".AddWorkoutActivity" />
-        <activity android:name=".EditWorkoutActivity"></activity>
+        <activity
+            android:name=".AddWorkoutActivity"
+            android:label="Create Workout"
+            android:parentActivityName=".AllWorkoutsPage" />
+        <activity
+            android:name=".EditWorkoutActivity"
+            android:label="Edit Workout"
+            android:parentActivityName=".AllWorkoutsPage"/>
     </application>
 
 </manifest>

@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.jjoe64.graphview.DefaultLabelFormatter;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.Viewport;
 import com.jjoe64.graphview.series.DataPoint;
@@ -22,6 +23,7 @@ public class ProfileActivity extends AppCompatActivity {
     ArrayList<Double> weights =User.getInstance().getWeight();
     ArrayList<Double> heights =User.getInstance().getHeight();
     double yVal;
+    double xVal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +58,8 @@ public class ProfileActivity extends AppCompatActivity {
         viewport.setMinY(Math.floor(weightSeries.getLowestValueY())-1);
         viewport.setMaxY(Math.ceil(weightSeries.getHighestValueY())+1);
 
+        weightGraph.getGridLabelRenderer().setHorizontalLabelsVisible(false);
+
         if(!user.getName().equals(""))
             ((TextView)findViewById(R.id.bmiTextView)).setText(user.getName()+"'s BMI");
 
@@ -71,13 +75,16 @@ public class ProfileActivity extends AppCompatActivity {
         bmiSeries.setDrawDataPoints(true);
         bmiGraph.addSeries(bmiSeries);
 
-        Viewport bmiViewport = bmiGraph.getViewport();
-        bmiViewport.setXAxisBoundsManual(true);
-        bmiViewport.setMinX(Math.floor(bmiSeries.getLowestValueX()));
-        bmiViewport.setMaxX(Math.ceil(bmiSeries.getHighestValueX()));
-        bmiViewport.setYAxisBoundsManual(true);
-        bmiViewport.setMinY(Math.floor(bmiSeries.getLowestValueY())-1);
-        bmiViewport.setMaxY(Math.ceil(bmiSeries.getHighestValueY())+1);
+        viewport = bmiGraph.getViewport();
+        viewport.setXAxisBoundsManual(true);
+        viewport.setMinX(Math.floor(bmiSeries.getLowestValueX()));
+        viewport.setMaxX(Math.ceil(bmiSeries.getHighestValueX()));
+
+        viewport.setYAxisBoundsManual(true);
+        viewport.setMinY(Math.floor(bmiSeries.getLowestValueY())-1);
+        viewport.setMaxY(Math.ceil(bmiSeries.getHighestValueY())+1);
+
+        bmiGraph.getGridLabelRenderer().setHorizontalLabelsVisible(false);
     }
     public void onClickBtn(View v)
     {
@@ -88,9 +95,10 @@ public class ProfileActivity extends AppCompatActivity {
         if(!editText.getText().toString().equals("")){
             yVal=Double.parseDouble(editText.getText().toString());
             user.addWeight(yVal);
-            user.addHeight(user.getHeight().get(user.getHeight().size()-1));
+            xVal=user.getHeight().get(user.getHeight().size()-1);
+            user.addHeight(xVal);
             weightSeries.appendData(new DataPoint(weightSeries.getHighestValueX()+1, yVal), false, 15);
-            bmiSeries.appendData(new DataPoint(bmiSeries.getHighestValueX()+1, yVal/(user.getHeight().get(user.getHeight().size()-1)*user.getHeight().get(user.getHeight().size()-1))), false, 15);
+            bmiSeries.appendData(new DataPoint(bmiSeries.getHighestValueX()+1, yVal/(xVal*xVal)), false, 15);
 
             Viewport viewport = weightGraph.getViewport();
             viewport.setMinY(Math.floor(weightSeries.getLowestValueY())-1);
@@ -98,11 +106,10 @@ public class ProfileActivity extends AppCompatActivity {
             viewport.setMinX(Math.floor(weightSeries.getLowestValueX()));
             viewport.setMaxX(Math.ceil(weightSeries.getHighestValueX()));
             viewport = bmiGraph.getViewport();
-            viewport.setMinY(Math.floor(bmiSeries.getLowestValueY())-1);
-            viewport.setMaxY(Math.ceil(bmiSeries.getHighestValueY())+1);
+            viewport.setMinY(Math.floor(bmiSeries.getLowestValueY()));
+            viewport.setMaxY(Math.ceil(bmiSeries.getHighestValueY()));
             viewport.setMinX(Math.floor(bmiSeries.getLowestValueX()));
             viewport.setMaxX(Math.ceil(bmiSeries.getHighestValueX()));
         }
     }
-
 }
