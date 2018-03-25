@@ -132,7 +132,8 @@
             android:scaleType="centerCrop"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbar"
-            app:srcCompat="@drawable/yogamatt" />
+            app:srcCompat="@drawable/yogamatt"
+            tools:ignore="NotSibling" />
 
         <TextView
             android:id="@+id/textID30"

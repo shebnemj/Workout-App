@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+    <include
+        layout="@layout/toolbar_main"
+        android:id="@+id/toolbar" />
 
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <!-- bla bla bla-->
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!-- Here you put the rest of your current view-->
+        <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.sebnem.workoutapp.WorkoutDetailsPage">
-    <include
-        layout="@layout/toolbar_main"
-        android:id="@+id/toolbar" />
+
 
     <TextView
         android:id="@+id/textID8"
@@ -20,7 +32,8 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textID6" />
+        app:layout_constraintTop_toBottomOf="@+id/textID6"
+        app:layout_constraintBottom_toTopOf="@+id/listviewWD"/>
 
     <TextView
         android:id="@+id/textID6"
@@ -88,18 +101,19 @@
         app:layout_constraintEnd_toStartOf="@+id/startWorkoutButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        tools:ignore="NotSibling"
         app:srcCompat="@drawable/hiit" />
 
-    <ListView
-        android:id="@+id/listviewWD"
-        android:layout_width="384dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textID8" >
-
-    </ListView>
+            <ListView
+                android:id="@+id/listviewWD"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textID8">
+            </ListView>
 
     <ImageButton
         android:id="@+id/startWorkoutButton"
@@ -146,3 +160,5 @@
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+</LinearLayout>
