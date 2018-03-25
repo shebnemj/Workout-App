@@ -15,30 +15,27 @@
         android:id="@+id/textView2"
         android:layout_width="165dp"
         android:layout_height="29dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="20dp"
         android:fontFamily="sans-serif"
         android:text="Recent Workouts"
         android:textSize="18sp"
         android:typeface="serif"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.082"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.13" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <Button
         android:id="@+id/allWorkouts"
         android:layout_width="119dp"
         android:layout_height="48dp"
+        android:layout_marginBottom="20dp"
         android:background="#888888"
         android:text="All Workouts"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/allExercises"
         app:layout_constraintHorizontal_bias="0.81"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.92" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/allExercises"
@@ -46,12 +43,10 @@
         android:layout_height="48dp"
         android:background="#888888"
         android:text="All Exercises"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.75"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.92" />
+        app:layout_constraintTop_toTopOf="@+id/allWorkouts" />
 
     <ListView
         android:id="@+id/listviewID"
