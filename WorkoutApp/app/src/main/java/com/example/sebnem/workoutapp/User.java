@@ -290,14 +290,51 @@ public class User {
     public ArrayList<Exercise> setExercises()
     {
         ArrayList<Exercise> exs=new ArrayList<>();
-        exs.add(new Muscle("Barbell Shrugs","",R.drawable.barbell_shrugs,"Barbell"));
-        exs.add(new Muscle("Bench Press","",R.drawable.bench_press,"Bench"));
-        exs.add(new Muscle("Butterfly Machine","",R.drawable.butterfly_machine,""));
-        exs.add(new Muscle("Cable Crossover","",R.drawable.cable_crossover,""));
-        exs.add(new Muscle("Chest Dips","",R.drawable.chest_dips,""));
-        exs.add(new Muscle("Chin Ups","",R.drawable.chin_ups,""));
-        exs.add(new Muscle("Dumbbell Flys","",R.drawable.dumbbell_flys,"Dumbbell"));
-        exs.add(new Muscle("Dumbbell Lunges","",R.drawable.dumbbell_lunges,"Dumbbell"));
+        exs.add(new Muscle("Barbell Shrugs","Grip a barbell with your palms facing towards your body about a shoulder-width apart. Stand up straight with your abs drawn in and your back straight. The barbell should be resting in front of your waist and your shoulders should be dropped as much as possible.\n" +
+                "\n" +
+                "Slowly raise the barbell up by contracting your traps and raising your shoulders. Raise the bar as high as possible, then hold this top postion for a moment.\n" +
+                "\n" +
+                "Slowly lower the bar back to the starting position.",R.drawable.barbell_shrugs,"Barbell"));
+        exs.add(new Muscle("Bench Press","Lie flat on the benches with your feet firmly on the ground. The bar should be resting on the bench's rack.\n" +
+                "\n" +
+                "Lift the bar off the rack and hold it above your chest in the starting position. Lower the bar down until it touches your chest. Hold this position briefly and make sure you have complete control of the bar. Now raise the bar up to the starting postion.\n" +
+                "\n" +
+                "Return the bar to the rack after you've completed your set.",R.drawable.bench_press,"Bench"));
+        exs.add(new Muscle("Butterfly Machine","Sit on the machine with your back flat. Adjust the height of the seat so that the pads of the machine are at your chest height. put your forearms against the pads.\n" +
+                "\n" +
+                "Push the pads together as you squeeze your chest. Push until the pads meet in the middle. Hold this position for a moment then return to the starting position.\n" +
+                "\n",R.drawable.butterfly_machine,""));
+        exs.add(new Muscle("Cable Crossover","Attach handles to the higher pulleys of both cable machines. Stand between the two machines with your legs and waist slightly bent. Grip the handles of the pulleys with your palms facing down and your arms out to your sides.\n" +
+                "\n" +
+                "Slowly pull the handles down towards the floor until they touch or cross over in front of you. Hold this position for a few moments then return to the starting position.",R.drawable.cable_crossover,""));
+        exs.add(new Muscle("Chest Dips","Grip the bars of the dip bar and push yourself up to the starting position. Your arms should be straight and fairly close to your body. Keep your knees bent so that your feet never touch the ground.\n" +
+                "\n" +
+                "Slowly lower your body, leading with your chest as you go down. Your chest should start pointing down towards the ground at a 45 degree angle. Lower your body until you feel a stretch in your chest and shoulders, then begin to slowly raise your body up again.\n" +
+                "\n",R.drawable.chest_dips,"Dip Bar"));
+        exs.add(new Muscle("Chin Ups","Grasp a chin up bar with a slightly wider than shoulder width grip.\n" +
+                "\n" +
+                "Keeping your body straight pull yourself up and to one side of the bar.\n" +
+                "\n" +
+                "Lower your body back down to the starting position.\n" +
+                "\n" +
+                "Raise yourself to the other side of the bar.",R.drawable.chin_ups,""));
+        exs.add(new Muscle("Dumbbell Flys","Lie on a flat bench with your arms out to your sides. Your elbows should be pointing down to the ground and your palms up to the ceiling. You should hold the dumbbells at roughly the height of your shoulders.\n" +
+                "\n" +
+                "Focus on using your chest to bring your arms up until the dumbbells are directly above your chest. Your biceps and triceps should just be stabilizing your arms. You shouldn't be using them for any of the lifting.\n" +
+                "\n" +
+                "In the top position your elbows should be facing outwards and your palms facing inwards towards each other.\n" +
+                "\n" +
+                "Hold the dumbbells briefly at the top then slowly lower them. Again, focus on using your chest to control the downwards motion.\n" +
+                "\n",R.drawable.dumbbell_flys,"Dumbbell, bench"));
+        exs.add(new Muscle("Dumbbell Lunges","Grasp a dumbbell in each hand.\n" +
+                "\n" +
+                "Stand with your feet about 8 inches apart, toes facing forward.\n" +
+                "\n" +
+                "Take a step forward (2-3 feet) keeping your abs drawn in and your upper body straight.\n" +
+                "\n" +
+                "Slowly lower one knee down as if kneeling while keeping your other knee bent at a 90 degree angle, do not let your knee touch the ground.\n" +
+                "\n" +
+                "Lower your body to just above the floor and hold for a moment before returning to the starting position.",R.drawable.dumbbell_lunges,"Dumbbell"));
         exs.add(new Muscle("Front Dumbbell Raise","",R.drawable.front_dumbbell_raise,"Dumbbell"));
         exs.add(new Muscle("Leg Extensions","",R.drawable.leg_extensions,""));
         exs.add(new Muscle("Machine Bench Press","",R.drawable.machine_bench_press,""));

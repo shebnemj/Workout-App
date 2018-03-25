@@ -11,10 +11,13 @@ tools:context="com.example.sebnem.workoutapp.ExerciseDetailsPage">
 <include
     layout="@layout/toolbar_main"
     android:id="@+id/toolbar" />
+
     <TextView
         android:id="@+id/textID3"
         android:layout_width="198dp"
         android:layout_height="31dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/borders"
         android:paddingTop="4dp"
         android:text="Exercise distance"
@@ -38,11 +41,13 @@ tools:context="com.example.sebnem.workoutapp.ExerciseDetailsPage">
     <TextView
         android:id="@+id/textID140"
         android:layout_width="197dp"
-        android:layout_height="75dp"
+        android:layout_height="134dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/borders"
         android:paddingTop="4dp"
         android:text="Exercise Description"
         android:textSize="14sp"
+        android:scrollbars = "vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textID120" />
 
@@ -61,13 +66,15 @@ tools:context="com.example.sebnem.workoutapp.ExerciseDetailsPage">
 
     <TextView
         android:id="@+id/textID20"
-        android:layout_width="142dp"
+        android:layout_width="146dp"
         android:layout_height="70dp"
+        android:layout_marginTop="32dp"
         android:text="Exercise Name"
         android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toTopOf="@+id/imageView4" />
 
@@ -87,6 +94,7 @@ tools:context="com.example.sebnem.workoutapp.ExerciseDetailsPage">
         android:id="@+id/textID110"
         android:layout_width="198dp"
         android:layout_height="31dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/borders"
         android:paddingTop="4dp"
         android:text="Exercise Type"
@@ -111,6 +119,7 @@ tools:context="com.example.sebnem.workoutapp.ExerciseDetailsPage">
         android:id="@+id/textID160"
         android:layout_width="198dp"
         android:layout_height="31dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/borders"
         android:paddingTop="4dp"
         android:text="Exercise equipment"

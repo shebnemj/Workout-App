@@ -27,7 +27,7 @@ public abstract class Exercise {
         return images;
     }
 
-    public Exercise(String name, String descrip, int imglink, String equip,String type) {
+    public Exercise(String name, String descrip, int imglink, String equip, String type) {
         setExerciseName(name);
         setDescription(descrip);
         setImage(imglink);
@@ -70,6 +70,7 @@ public abstract class Exercise {
     public void setType(String typeOfExercise){
         this.type = typeOfExercise;
     }
+
     public String getType(){
         return this.type;
     }
