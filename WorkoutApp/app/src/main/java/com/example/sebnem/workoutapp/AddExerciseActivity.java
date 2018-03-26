@@ -40,8 +40,8 @@ public class AddExerciseActivity extends AppCompatActivity{
         action_add_exercise.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!s.isChecked()) User.getInstance().getExerciseList().add(new Muscle(name.getText().toString(),desc.getText().toString(),R.drawable.dumbbell,equip.getText().toString()));
-                else User.getInstance().getExerciseList().add(new Cardio(name.getText().toString(),desc.getText().toString(),R.drawable.dumbbell,equip.getText().toString()));
+                if(!s.isChecked()) User.getInstance().getExerciseList().add(new Muscle(name.getText().toString(),desc.getText().toString(),R.drawable.logocopy,equip.getText().toString()));
+                else User.getInstance().getExerciseList().add(new Cardio(name.getText().toString(),desc.getText().toString(),R.drawable.logocopy,equip.getText().toString()));
                 Intent intent = new Intent(AddExerciseActivity.this, AllExercisesPage.class);
                 startActivity(intent);
             }
