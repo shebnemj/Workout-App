@@ -13,15 +13,16 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AddExerciseActivity extends AppCompatActivity implements View.OnClickListener{
+public class AddExerciseActivity extends AppCompatActivity{
 
     //AllExercisesPage _parentPage;
-    Intent _intent;
+    //Intent _intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,16 +32,22 @@ public class AddExerciseActivity extends AppCompatActivity implements View.OnCli
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
-
-        _intent = getIntent();
-        //String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
-
+        final EditText name = (EditText) findViewById(R.id.exName_input);
+        final EditText desc = (EditText) findViewById(R.id.exDesc_input);
+        final EditText equip = (EditText) findViewById(R.id.exEquip_input);
 
         Button action_add_exercise = (Button) findViewById(R.id.action_add_exercise);
-        action_add_exercise.setOnClickListener(this);
+        action_add_exercise.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                User.getInstance().getExerciseList().add(new Muscle(name.getText().toString(),desc.getText().toString(),R.drawable.dumbbell,equip.getText().toString()));
+                Intent intent = new Intent(AddExerciseActivity.this, AllExercisesPage.class);
+                startActivity(intent);
+            }
+        });
     }
 
-    @Override
+   /* @Override
     public void onClick(View view) {
 
 
@@ -74,7 +81,7 @@ public class AddExerciseActivity extends AppCompatActivity implements View.OnCli
             default:
                 break;
         }
-    }
+    }*/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the app bar.
