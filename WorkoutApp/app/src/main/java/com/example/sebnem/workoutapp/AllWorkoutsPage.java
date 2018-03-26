@@ -52,7 +52,6 @@ public class AllWorkoutsPage extends AppCompatActivity {
         });
 
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the app bar.
@@ -72,11 +71,32 @@ public class AllWorkoutsPage extends AppCompatActivity {
                 startActivity(intent);
                 return true;
             case R.id.action_add:
-                 intent = new Intent(this, AddWorkoutActivity.class);
-                 startActivity(intent);
-                 return true;
+                //startActivityForResult(new Intent(this, AddWorkoutActivity.class), 666);
+                intent = new Intent(this, AddWorkoutActivity.class);
+                startActivity(intent);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
+        }
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+        if(resultCode == RESULT_OK && requestCode == 666) {
+            String name = data.getStringExtra("exercise");
+
+            String[] names = new String[nameArray.length+1];
+            Integer[] images = new Integer[imageArray.length+1];
+
+            System.arraycopy(nameArray, 0, names, 0, nameArray.length);
+            System.arraycopy(imageArray, 0, images, 0, imageArray.length);
+
+            names[names.length-1] = name;
+            images[images.length-1] = imageArray[0];
+
+            nameArray = names;
+            imageArray = images;
+
+            showData();
         }
     }
 }

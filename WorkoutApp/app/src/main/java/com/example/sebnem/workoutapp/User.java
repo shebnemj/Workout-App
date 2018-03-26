@@ -57,6 +57,10 @@ public class User {
         return exerciseList;
     }
 
+    public ArrayList<Workout> getWorkoutList(){
+        return workoutList;
+    }
+
     public void addWeight(double weight) {
         userWeight.add((double) weight);
     }
@@ -177,10 +181,11 @@ public class User {
         w.printWorkoutInfo();
     }
 
-    public void addWorkout(String wNName, boolean type, String wNDes, int wNDur){
+    public Workout addWorkout(String wNName, boolean type, String wNDes, int wNDur){
         Workout wN;
         wN = new Workout(wNName, true,wNDes,wNDur,R.drawable.hiit);
         workoutList.add(wN);
+        return wN;
     }
 
     public void createWorkout() {

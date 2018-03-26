@@ -33,6 +33,17 @@
         app:layout_constraintStart_toEndOf="@+id/exNameTextView"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
+    <TextView
+        android:id="@+id/exTypeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Type"
+        android:textAlignment="textStart"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/exDesc_input"
+        app:layout_constraintTop_toBottomOf="@+id/exName_input" />
+
     <EditText
         android:id="@+id/exDesc_input"
         android:layout_width="0dp"
@@ -55,7 +66,7 @@
         android:textAlignment="viewStart"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/exDesc_input"
-        app:layout_constraintTop_toBottomOf="@+id/exName_input" />
+        app:layout_constraintTop_toBottomOf="@+id/exTypeTextView" />
 
     <TextView
         android:id="@+id/exEquipmentTextView"
@@ -92,5 +103,35 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/exTypeTextView"
+        app:layout_constraintTop_toTopOf="@+id/exTypeTextView" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="Muscle"
+        app:layout_constraintBottom_toBottomOf="@+id/switch1"
+        app:layout_constraintEnd_toStartOf="@+id/switch1"
+        app:layout_constraintTop_toTopOf="@+id/switch1" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Cardio"
+        app:layout_constraintBottom_toBottomOf="@+id/switch1"
+        app:layout_constraintStart_toEndOf="@+id/switch1"
+        app:layout_constraintTop_toTopOf="@+id/switch1" />
 
 </android.support.constraint.ConstraintLayout>
