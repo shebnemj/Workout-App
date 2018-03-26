@@ -14,13 +14,16 @@ import android.os.Bundle;
 
 public class ExerciseDetailsPage extends AppCompatActivity {
 
+    Exercise ex=Exercise.exercises.get(0);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        String exerciseType = getIntent().getStringExtra("TYPE");
+        //String exerciseType = getIntent().getStringExtra("TYPE");
+        final int position = getIntent().getIntExtra("pos",0);
+        ex=Exercise.exercises.get(position);
 
-        switch(exerciseType){
+        switch(ex.getType()){
 
             case "Cardio":
 
@@ -31,22 +34,22 @@ public class ExerciseDetailsPage extends AppCompatActivity {
                 ActionBar actionBar = getSupportActionBar();
                 actionBar.setDisplayHomeAsUpEnabled(true);
 
-                String exerciseNameC = getIntent().getStringExtra("cardioName");
+                //String exerciseNameC = getIntent().getStringExtra("cardioName");
                 TextView nameC = (TextView) findViewById(R.id.textID20);
-                nameC.setText(exerciseNameC);
+                nameC.setText(ex.getExerciseName());
 
-                String exerciseDescriptionC = getIntent().getStringExtra("species");
+                //String exerciseDescriptionC = getIntent().getStringExtra("species");
                 TextView myTextt2 = (TextView) findViewById(R.id.textID140);
-                myTextt2.setText(exerciseDescriptionC);
+                myTextt2.setText(ex.getDescription());
                 myTextt2.setMovementMethod(new ScrollingMovementMethod());
 
-                String exerciseEquipmentC = getIntent().getStringExtra("equipment");
+                //String exerciseEquipmentC = getIntent().getStringExtra("equipment");
                 TextView myTextt3 = (TextView) findViewById(R.id.textID160);
-                myTextt3.setText(exerciseEquipmentC);
+                myTextt3.setText(ex.getEquipment());
 
-                Integer cardioImage = getIntent().getIntExtra("maybimage",0);
+                //Integer cardioImage = getIntent().getIntExtra("maybimage",0);
                 ImageView imageViewC = (ImageView) findViewById(R.id.imageView4);
-                imageViewC.setImageResource(cardioImage);
+                imageViewC.setImageResource(ex.getImage());
 
                 TextView typeCardio = (TextView) findViewById(R.id.textID110);
                 typeCardio.setText("Cardio");
@@ -62,29 +65,29 @@ public class ExerciseDetailsPage extends AppCompatActivity {
                 ActionBar actionBarr = getSupportActionBar();
                 actionBarr.setDisplayHomeAsUpEnabled(true);
 
-                String savedExtra = getIntent().getStringExtra("animal");
+                //String savedExtra = getIntent().getStringExtra("animal");
                 TextView myText = (TextView) findViewById(R.id.textID2);
-                myText.setText(savedExtra);
+                myText.setText(ex.getExerciseName());
 
-                String exerciseDescripTest = getIntent().getStringExtra("species");
+                //String exerciseDescripTest = getIntent().getStringExtra("species");
                 TextView myText2 = (TextView) findViewById(R.id.textID14);
-                myText2.setText(exerciseDescripTest);
+                myText2.setText(ex.getDescription());
                 myText2.setMovementMethod(new ScrollingMovementMethod());
 
-                String exerciseEquipment = getIntent().getStringExtra("equipment");
+                //String exerciseEquipment = getIntent().getStringExtra("equipment");
                 TextView myText3 = (TextView) findViewById(R.id.textID16);
-                myText3.setText(exerciseEquipment);
+                myText3.setText(ex.getEquipment());
 
                 //Integer exerciseReps = getIntent().getIntExtra("reps",0);
                 TextView repsMuscle = (TextView) findViewById(R.id.textID30);
                 repsMuscle.setText("10");
 
-                Integer muscleImage = getIntent().getIntExtra("maybimage",0);
+                //Integer muscleImage = getIntent().getIntExtra("maybimage",0);
                 ImageView imageView = (ImageView) findViewById(R.id.imageView3);
-                imageView.setImageResource(muscleImage);
+                imageView.setImageResource(ex.getImage());
 
                 TextView typeMuscle = (TextView) findViewById(R.id.textID11);
-                typeMuscle.setText("Muscle");
+                typeMuscle.setText(ex.getType());
 
                 break;
 
@@ -94,7 +97,7 @@ public class ExerciseDetailsPage extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the app bar.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_edit, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -107,6 +110,11 @@ public class ExerciseDetailsPage extends AppCompatActivity {
                 return true;
             case R.id.action_profile:
                 intent = new Intent(this, ProfileActivity.class);
+                startActivity(intent);
+                return true;
+            case R.id.action_edit:
+                intent=new Intent(this,EditExerciseActivity.class);
+                intent.putExtra("pos",getIntent().getIntExtra("pos",0));
                 startActivity(intent);
                 return true;
             default:

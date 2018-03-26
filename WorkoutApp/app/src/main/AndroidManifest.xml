@@ -19,50 +19,47 @@
         <activity
             android:name=".AllWorkoutsPage"
             android:label="@string/action_all_workouts"
-            android:parentActivityName="com.example.sebnem.workoutapp.MainActivity" />
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".AllExercisesPage"
             android:label="@string/action_all_exercises"
             android:parentActivityName=".MainActivity" />
-
         <activity
             android:name=".AddExerciseActivity"
             android:label="Create Exercise"
             android:parentActivityName=".AllExercisesPage" />
-
         <activity
             android:name=".WorkoutStart"
             android:label=""
             android:parentActivityName=".MainActivity" />
-
         <activity
             android:name=".WorkoutDetailsPage"
             android:label=""
             android:parentActivityName=".AllWorkoutsPage" />
-
         <activity
             android:name=".ExerciseDetailsPage"
             android:label=""
             android:parentActivityName=".AllExercisesPage" />
-
         <activity
             android:name=".ProfileActivity"
             android:label="@string/action_profile"
             android:parentActivityName=".MainActivity" />
-
         <activity
             android:name=".SettingsActivity"
             android:label="@string/action_settings"
             android:parentActivityName=".MainActivity" />
-
         <activity
             android:name=".AddWorkoutActivity"
             android:label="Create Workout"
             android:parentActivityName=".AllWorkoutsPage" />
-
         <activity
             android:name=".EditWorkoutActivity"
-            android:label="Edit Workout"/>
+            android:label="Edit Workout"
+            android:parentActivityName=".AllWorkoutsPage"/>
+        <activity
+            android:name=".EditExerciseActivity"
+            android:label="Edit Exercise"
+            android:parentActivityName=".AllExercisesPage"/>
     </application>
 
 </manifest>
