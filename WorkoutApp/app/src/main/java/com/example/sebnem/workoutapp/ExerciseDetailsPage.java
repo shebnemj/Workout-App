@@ -20,9 +20,11 @@ public class ExerciseDetailsPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         //String exerciseType = getIntent().getStringExtra("TYPE");
-        final int position = getIntent().getIntExtra("pos",0);
-        ex=Exercise.exercises.get(position);
-
+        final String exName = getIntent().getStringExtra("name");
+        for(int i=0;i<Exercise.exercises.size();i++){
+            if(Exercise.exercises.get(i).getExerciseName().equals(exName))
+                ex=Exercise.exercises.get(i);
+        }
         switch(ex.getType()){
 
             case "Cardio":

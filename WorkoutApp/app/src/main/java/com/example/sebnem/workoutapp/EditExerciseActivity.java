@@ -27,15 +27,15 @@ public class EditExerciseActivity extends AppCompatActivity {
         final int position = getIntent().getIntExtra("pos",0);
         ex=Exercise.exercises.get(position);
 
-        final EditText nameEdit=(EditText)findViewById(R.id.exNameEditText);
+        final EditText nameEdit=(EditText)findViewById(R.id.exName_input);
         nameEdit.setText(ex.getExerciseName());
 
         //description
-        final EditText descEdit=(EditText)findViewById(R.id.exDescEditText);
+        final EditText descEdit=(EditText)findViewById(R.id.exDesc_input);
         descEdit.setText(ex.getDescription());
 
         //equipment
-        final EditText equpipmentEdit=(EditText)findViewById(R.id.exEquipmentEditText);
+        final EditText equpipmentEdit=(EditText)findViewById(R.id.exEquip_input);
         equpipmentEdit.setText(ex.getEquipment());
         //reps
 

@@ -46,7 +46,7 @@ public class AllExercisesPage extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position,
                                     long id) {
                 Intent intent = new Intent(AllExercisesPage.this, ExerciseDetailsPage.class);
-                intent.putExtra("pos",position);
+                intent.putExtra("name",list.get(position).getExerciseName());
                 startActivity(intent);
             }
         });

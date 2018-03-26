@@ -21,9 +21,6 @@ import java.util.List;
 
 public class AddExerciseActivity extends AppCompatActivity{
 
-    //AllExercisesPage _parentPage;
-    //Intent _intent;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,41 +44,6 @@ public class AddExerciseActivity extends AppCompatActivity{
         });
     }
 
-   /* @Override
-    public void onClick(View view) {
-
-
-        switch (view.getId()) {
-            case R.id.action_add_exercise:
-
-                EditText name = (EditText) findViewById(R.id.exName_input);
-                EditText desc = (EditText) findViewById(R.id.exDesc_input);
-                EditText equip = (EditText) findViewById(R.id.exEquip_input);
-                EditText exC = (EditText) findViewById(R.id.exC_input);
-                EditText time = (EditText) findViewById(R.id.exTime_input);
-                EditText distance = (EditText) findViewById(R.id.exDistance_input);
-
-                String strName = name.getText().toString();
-                String strDesc = desc.getText().toString();
-                String strEquip = equip.getText().toString();
-
-                try {
-
-                    // Cardio ex = new Cardio(strName,strDesc,10,strEquip);
-                    Exercise ex = new Muscle(strName,strDesc,R.drawable.barbell_shrugs,strEquip);
-
-                    Intent intent = new Intent();
-                    intent.putExtra("exercise", strName);
-                    setResult(RESULT_OK, intent);
-                    finish();
-                }
-                catch(Exception ex){
-                    System.out.println(ex);
-                }
-            default:
-                break;
-        }
-    }*/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the app bar.
