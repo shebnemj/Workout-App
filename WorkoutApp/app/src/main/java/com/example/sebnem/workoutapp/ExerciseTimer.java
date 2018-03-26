@@ -1,71 +1,82 @@
 package com.example.sebnem.workoutapp;
 
-public class ExerciseTimer {
+import android.os.Bundle;
+import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
-	private int exerciseDuration;
-    private int seconds = 0;
-	private int minutes = 0;
-	boolean running = true;
-    
+public class ExerciseTimer  extends AppCompatActivity {
 
-    public ExerciseTimer(int duration){
-    	exerciseDuration = duration;
+    boolean resumed;
+    private int seconds=0;
+    private boolean startRun;
 
-    }
 
-    public void Pause() {
-    	Resume(); //Needs to be implemented
-    }
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_timer);
 
-    public void Run() {
-        
 
-        while (running) {
 
-            try {
-
-                Thread.sleep(1000);
-
-                seconds += 1;
-
-                if(seconds ==  60) { //Change 60 to lower number for easier testing
-
-                    minutes+= 1;
-
-                    seconds = 0;
-
-                }
-                if(minutes==exerciseDuration){
-                    running = false;
-                }
-
-                System.out.println(minutes + " : " + seconds); //Prints every second. Comment if too many outputs
-            } 
-            catch (InterruptedException e) {
-
-                running = false;
-
-                e.printStackTrace();
-            }
-
+        if(savedInstanceState != null){
+            seconds = savedInstanceState.getInt("seconds");
+            startRun=savedInstanceState.getBoolean("startRun");
         }
-        Complete();
-	}
 
-	public void Resume() {
+        Timer();
 
-	}
 
-	public void Complete() {
-		System.out.println("Exercise Complete");
-	}
 
-	public int getExerciseDuration() { 
-		return this.exerciseDuration;
-	}
+    }
 
-	public void setExerciseDuration(int time) {
-		this.exerciseDuration = time;
-	}
+    public void onSaveInstanceState(Bundle saveInstanceState){
+        saveInstanceState.putInt("seconds", seconds);
+        saveInstanceState.putBoolean("startRun", startRun);
+    }
 
+    public void onClickStart(View view){
+        startRun=true;
+        final TextView tStatus = (TextView)findViewById(R.id.textStatus);
+        tStatus.setText("Running");
+    }
+
+    public void onClickStop(View view){
+        startRun=false;
+        final TextView tStatus = (TextView)findViewById(R.id.textStatus);
+        tStatus.setText("Paused");
+    }
+
+    public void onClickReset(View view){
+        startRun=false;
+        seconds=0;
+        final TextView tStatus = (TextView)findViewById(R.id.textStatus);
+        tStatus.setText("Paused");
+    }
+
+    private void Timer(){
+        final TextView timeView = (TextView)findViewById(R.id.timerTextView);
+        final Handler handler = new Handler();
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                int hours = seconds/3600;
+                int minutes = (seconds%3600)/60;
+                int secs = seconds%60;
+
+                String time = String.format("%d:%02d:%02d", hours, minutes, secs);
+
+                timeView.setText(time);
+
+                if(startRun){
+                    seconds++;
+                }
+
+                handler.postDelayed(this, 1000);
+            }
+        });
+
+    }
 }
