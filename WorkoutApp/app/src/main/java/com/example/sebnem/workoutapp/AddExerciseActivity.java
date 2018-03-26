@@ -11,8 +11,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import java.lang.reflect.Array;
@@ -32,12 +34,14 @@ public class AddExerciseActivity extends AppCompatActivity{
         final EditText name = (EditText) findViewById(R.id.exName_input);
         final EditText desc = (EditText) findViewById(R.id.exDesc_input);
         final EditText equip = (EditText) findViewById(R.id.exEquip_input);
+        final Switch s = (Switch) findViewById(R.id.switch1);
 
         Button action_add_exercise = (Button) findViewById(R.id.action_add_exercise);
         action_add_exercise.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                User.getInstance().getExerciseList().add(new Muscle(name.getText().toString(),desc.getText().toString(),R.drawable.dumbbell,equip.getText().toString()));
+                if(!s.isChecked()) User.getInstance().getExerciseList().add(new Muscle(name.getText().toString(),desc.getText().toString(),R.drawable.dumbbell,equip.getText().toString()));
+                else User.getInstance().getExerciseList().add(new Cardio(name.getText().toString(),desc.getText().toString(),R.drawable.dumbbell,equip.getText().toString()));
                 Intent intent = new Intent(AddExerciseActivity.this, AllExercisesPage.class);
                 startActivity(intent);
             }

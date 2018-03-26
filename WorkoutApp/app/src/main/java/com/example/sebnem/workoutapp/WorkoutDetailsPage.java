@@ -101,14 +101,11 @@ public class WorkoutDetailsPage extends AppCompatActivity implements View.OnClic
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position,
                                     long id) {
-
-                        Intent intent = new Intent(WorkoutDetailsPage.this, ExerciseDetailsPage.class);
-                        intent.putExtra("name",list.get(finalI).getExerciseName());
-                        startActivity(intent);
-
+                Intent intent = new Intent(WorkoutDetailsPage.this, ExerciseDetailsPage.class);
+                intent.putExtra("name",list.get(position).getExerciseName());
+                startActivity(intent);
                 }
             });
-
         }
 
     @Override
