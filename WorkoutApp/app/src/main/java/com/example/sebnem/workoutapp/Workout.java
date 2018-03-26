@@ -97,6 +97,7 @@ public class Workout {
         this.duration = time;
     }
 
+//USED THIS METHOD BELOW DONT DELETE
     public void addWExercise(Exercise ex) {
         exerciseList.add(ex);
     }

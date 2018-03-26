@@ -55,11 +55,12 @@
         <activity
             android:name=".EditWorkoutActivity"
             android:label="Edit Workout"
-            android:parentActivityName=".AllWorkoutsPage"/>
+            android:parentActivityName=".AllWorkoutsPage" />
         <activity
             android:name=".EditExerciseActivity"
             android:label="Edit Exercise"
-            android:parentActivityName=".AllExercisesPage"/>
+            android:parentActivityName=".AllExercisesPage" />
+        <activity android:name=".AddExtoWActivity"></activity>
     </application>
 
 </manifest>

@@ -28,12 +28,34 @@ public class AddWorkoutActivity extends AppCompatActivity {
         final EditText wDes = (EditText) findViewById(R.id.wDes);
         final EditText wDur = (EditText) findViewById(R.id.wDur);
 
-        Button action_add_workout = (Button) findViewById(R.id.action_add_workout);
+        /*Button action_add_workout = (Button) findViewById(R.id.action_add_workout);
         action_add_workout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Workout.workouts.add(new Workout(wName.getText().toString(),true, wDes.getText().toString(), Integer.parseInt(wDur.getText().toString()), R.drawable.abs ));
                 Intent intent = new Intent(AddWorkoutActivity.this, AllWorkoutsPage.class);
+                startActivity(intent);
+            }
+        });
+
+        Button action_add_extow = (Button) findViewById(R.id.action_add_extow);
+        action_add_extow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AddWorkoutActivity.this, AddExtoWActivity.class);
+                startActivity(intent);
+            }
+        });*/
+
+        Button action_add_workout = (Button) findViewById(R.id.action_add_workout);
+        action_add_workout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AddWorkoutActivity.this, AddExtoWActivity.class);
+                intent.putExtra("wName", wName.getText().toString());
+                intent.putExtra("wDes", wDes.getText().toString());
+                intent.putExtra("wDur", Integer.parseInt(wDur.getText().toString()));
+                intent.putExtra("wImg", R.drawable.abs );
                 startActivity(intent);
             }
         });
