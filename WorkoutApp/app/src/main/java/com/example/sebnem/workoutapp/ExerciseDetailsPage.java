@@ -7,13 +7,18 @@ import android.support.v7.widget.Toolbar;
 import android.text.method.ScrollingMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.os.Bundle;
 
-public class ExerciseDetailsPage extends AppCompatActivity {
+import java.util.ArrayList;
 
+public class ExerciseDetailsPage extends AppCompatActivity implements View.OnClickListener {
+
+    ArrayList<ArrayList<Exercise>> wExerciseList = Workout.wExercises();
     Exercise ex=Exercise.exercises.get(0);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,9 +96,38 @@ public class ExerciseDetailsPage extends AppCompatActivity {
                 TextView typeMuscle = (TextView) findViewById(R.id.textID11);
                 typeMuscle.setText(ex.getType());
 
+                Button removeExButton = (Button) findViewById(R.id.removeEx);
+                removeExButton.setOnClickListener(this);
+
                 break;
 
         }
+    }
+
+    public void onClick(View view) {
+
+        Intent intent = new Intent(ExerciseDetailsPage.this, AllExercisesPage.class);
+
+        for (int i = 0;i<Exercise.exercises.size();i++) {
+            if(Exercise.exercises.get(i).equals(ex)){
+
+                for(int j=0;j<wExerciseList.size();j++){
+                    for(int k = 0; k < wExerciseList.get(j).size();k++){
+                        if(wExerciseList.get(j).get(k).equals(ex)){
+                            wExerciseList.get(j).remove(k);
+                        }
+                    }
+                }
+
+                Exercise.exercises.remove(i);
+                break;
+            }
+        }
+
+
+
+        startActivity(intent);
+
     }
 
     @Override

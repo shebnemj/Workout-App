@@ -152,7 +152,7 @@
             android:id="@+id/textID90"
             android:layout_width="119dp"
             android:layout_height="31dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="20dp"
             android:text="Reps"
             android:textAlignment="textEnd"
             android:textSize="18sp"
@@ -178,7 +178,7 @@
             android:id="@+id/textID903"
             android:layout_width="119dp"
             android:layout_height="31dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="20dp"
             android:text="Muscle"
             android:textAlignment="textEnd"
             android:textSize="18sp"
@@ -186,6 +186,19 @@
             app:layout_constraintHorizontal_bias="0.592"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textID90" />
+
+        <Button
+            android:id="@+id/removeEx"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Remove Exercise"
+            android:backgroundTint="#e85858"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textID303"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteX="0dp" />
 
     </android.support.constraint.ConstraintLayout>
 

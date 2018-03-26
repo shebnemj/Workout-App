@@ -63,6 +63,7 @@ public class Workout {
         exerciseList.add(list.get(7));
         exerciseList.add(list.get(2));
         exerciseList.add(list.get(8));
+        exerciseList.add(list.get(1));
     }
 
     public String getWorkoutName() {

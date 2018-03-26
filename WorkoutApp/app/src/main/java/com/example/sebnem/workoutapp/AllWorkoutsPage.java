@@ -30,11 +30,15 @@ public class AllWorkoutsPage extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
+        showData();
+    }
+
+    protected void showData(){
         CustomWorkoutListAdapter whatever = new CustomWorkoutListAdapter(this, nameArray, imageArray);
         listView = (ListView) findViewById(R.id.listviewID);
         listView.setAdapter(whatever);
 
-        final List<Workout> list=Workout.workouts;
+        final List<Workout> list = Workout.workouts;
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -42,15 +46,11 @@ public class AllWorkoutsPage extends AppCompatActivity {
                                     long id) {
 
                 Intent intent = new Intent(AllWorkoutsPage.this, WorkoutDetailsPage.class);
-                String message = list.get(position).getWorkoutName();
-                String message2 = list.get(position).getWorkoutDescription();
-                Integer image = imageArray[position];
-                intent.putExtra("name", message);
-                intent.putExtra("description", message2);
-                intent.putExtra("image", image);
+                intent.putExtra("name", list.get(position).getWorkoutName());
                 startActivity(intent);
             }
         });
+
     }
 
     @Override
