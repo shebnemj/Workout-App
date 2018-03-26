@@ -11,23 +11,9 @@ public class Workout {
     private int imageLink;
     private ArrayList<Exercise> exerciseList;
 
-    public static ArrayList<Workout> workouts= initArrayList();
+    public static ArrayList<Workout> workouts= User.getInstance().getWorkoutList();
 
     public ArrayList<Exercise> list=Exercise.exercises;
-
-    private static ArrayList<Workout> initArrayList(){
-        ArrayList<Workout> list =new ArrayList<>();
-        list.add(new Workout("HIIT",true, "For fat burn.", 10, R.drawable.hiit));
-        list.add(new Workout("Beginner Abs",false, "For abs.", 15, R.drawable.abs));
-        list.add(new Workout("Yoga",false, "Zen.", 15, R.drawable.yogamatt));
-        list.add(new Workout("Fat Blaster",false, "Squat bich.", 15,R.drawable.abs));
-        list.add(new Workout("Arms",false, "Get rid of them chicken wings.", 15,R.drawable.dumbbell));
-        list.add(new Workout("Dumbbell Workout",false, "is this gonna work i wonder", 15, R.drawable.dumbbell));
-        list.add(new Workout("Summer Body",false, "is this gonna work i wonder", 15,R.drawable.abs));
-        list.add(new Workout("Core Trainer",false, "is this gonna work i wonder", 15,R.drawable.stretch));
-        list.add(new Workout("Butt BLASTAH",false, "okkkkkk", 15,R.drawable.hiit));
-        return list;
-    }
 
     public static String[] wNames(){
         String[] names=new String[workouts.size()];
@@ -59,11 +45,6 @@ public class Workout {
         setWorkoutDuration(time);
         setWorkoutImageLink(imagelink);
         exerciseList = new ArrayList<>();
-        exerciseList.add(list.get(4));
-        exerciseList.add(list.get(7));
-        exerciseList.add(list.get(2));
-        exerciseList.add(list.get(8));
-        exerciseList.add(list.get(1));
     }
 
     public String getWorkoutName() {
