@@ -13,17 +13,19 @@ public class Workout {
 
     public static ArrayList<Workout> workouts= initArrayList();
 
+    public ArrayList<Exercise> list=Exercise.exercises;
+
     private static ArrayList<Workout> initArrayList(){
         ArrayList<Workout> list =new ArrayList<>();
-        list.add(new Workout("HIIT",true, "For fat burn.", 10));
-        list.add(new Workout("Abs",false, "For abs.", 15));
-        list.add(new Workout("Yoga",false, "Zen.", 15));
-        list.add(new Workout("Tight Butt",false, "Squat bich.", 15));
-        list.add(new Workout("Arms",false, "Get rid of them chicken wings.", 15));
-        list.add(new Workout("Lifts",false, "is this gonna work i wonder", 15));
-        list.add(new Workout("Lifts",false, "is this gonna work i wonder", 15));
-        list.add(new Workout("Lifts",false, "is this gonna work i wonder", 15));
-        list.add(new Workout("Yoga",false, "okkkkkk", 15));
+        list.add(new Workout("HIIT",true, "For fat burn.", 10, R.drawable.hiit));
+        list.add(new Workout("Beginner Abs",false, "For abs.", 15, R.drawable.abs));
+        list.add(new Workout("Yoga",false, "Zen.", 15, R.drawable.yogamatt));
+        list.add(new Workout("Fat Blaster",false, "Squat bich.", 15,R.drawable.abs));
+        list.add(new Workout("Arms",false, "Get rid of them chicken wings.", 15,R.drawable.dumbbell));
+        list.add(new Workout("Dumbbell Workout",false, "is this gonna work i wonder", 15, R.drawable.dumbbell));
+        list.add(new Workout("Summer Body",false, "is this gonna work i wonder", 15,R.drawable.abs));
+        list.add(new Workout("Core Trainer",false, "is this gonna work i wonder", 15,R.drawable.stretch));
+        list.add(new Workout("Butt BLASTAH",false, "okkkkkk", 15,R.drawable.hiit));
         return list;
     }
 
@@ -37,17 +39,30 @@ public class Workout {
     public static Integer[] wImages(){
         Integer[] images=new Integer[workouts.size()];
         for (int i=0;i<images.length;i++){
-            images[i]=R.drawable.hiit;
+            images[i]=workouts.get(i).getWorkoutImageLink();
         }
         return images;
     }
 
-    public Workout(String name, boolean type, String descrip, int time) {
+    public static ArrayList<ArrayList<Exercise>> wExercises(){
+        ArrayList<ArrayList<Exercise>> exercises=new ArrayList<>();
+        for (int i=0;i<workouts.size();i++){
+            exercises.add(workouts.get(i).getExerciseList());
+        }
+        return exercises;
+    }
+
+    public Workout(String name, boolean type, String descrip, int time, int imagelink) {
         setWorkoutName(name);
         setWorkoutType(type);
         setWorkoutDescription(descrip);
         setWorkoutDuration(time);
+        setWorkoutImageLink(imagelink);
         exerciseList = new ArrayList<>();
+        exerciseList.add(list.get(4));
+        exerciseList.add(list.get(7));
+        exerciseList.add(list.get(2));
+        exerciseList.add(list.get(8));
     }
 
     public String getWorkoutName() {
@@ -90,13 +105,15 @@ public class Workout {
         exerciseList.remove(ex);
     }
 
-    public int getImage() {
+    public int getWorkoutImageLink() {
         return this.imageLink;
     }
 
-    public void setImage(int imglink) {
+    public void setWorkoutImageLink(int imglink) {
         this.imageLink = imglink;
     }
+
+    private ArrayList<Exercise> getExerciseList(){return this.exerciseList;}
 
     public void printExerciseList() {
         System.out.println("Current exercises within this workout are:");

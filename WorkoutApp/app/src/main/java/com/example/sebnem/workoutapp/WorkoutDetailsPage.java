@@ -14,13 +14,13 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class WorkoutDetailsPage extends AppCompatActivity implements View.OnClickListener {
 
-    String[] nameArray = Exercise.eNames();
-
-    Integer[] imageArray = Exercise.eImages();
+    ArrayList<ArrayList<Exercise>> wExerciseList = Workout.wExercises();
+    List<Workout> workoutList = Workout.workouts;
 
     ListView listView;
 
@@ -68,11 +68,34 @@ public class WorkoutDetailsPage extends AppCompatActivity implements View.OnClic
     }
 
     protected void showData(){
+
+        int i;
+
+        for(i = 0; i < workoutList.size(); i++){
+            if(workoutList.get(i).getWorkoutName().equals(workoutName)) {
+                break;
+            }
+        }
+
+        final List<Exercise> list = wExerciseList.get(i);
+
+        String[] nameArray = new String[list.size()];
+
+        for (int j=0;j<nameArray.length;j++){
+            nameArray[j]=list.get(j).getExerciseName();
+        }
+
+        Integer[] imageArray = new Integer[list.size()];
+
+        for (int j=0;j<imageArray.length;j++){
+            imageArray[j]=list.get(j).getImage();
+        }
+
+
         CustomExerciseListAdapter whatever = new CustomExerciseListAdapter(this, nameArray, imageArray);
         listView = (ListView) findViewById(R.id.listviewWD);
         listView.setAdapter(whatever);
 
-        final List<Exercise> list=Exercise.exercises;
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

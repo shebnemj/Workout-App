@@ -179,7 +179,7 @@ public class User {
 
     public void addWorkout(String wNName, boolean type, String wNDes, int wNDur){
         Workout wN;
-        wN = new Workout(wNName, true,wNDes,wNDur);
+        wN = new Workout(wNName, true,wNDes,wNDur,R.drawable.hiit);
         workoutList.add(wN);
     }
 
@@ -192,7 +192,7 @@ public class User {
         System.out.println("What is the workout duration");
         int wNDur = inputInt();
 
-        wN = new Workout(wNName, true,wNDes,wNDur);
+        wN = new Workout(wNName, true,wNDes,wNDur,R.drawable.hiit);
 
         boolean cont = true;
 
@@ -372,7 +372,7 @@ public class User {
                 String line =input.nextLine();
                 String [] temp = line.split("#");
 
-                wSave =new Workout(temp[0], true, temp[1], Integer.parseInt(temp[2]));
+                wSave =new Workout(temp[0], true, temp[1], Integer.parseInt(temp[2]),R.drawable.hiit);
 
                  for(int i=3; i<temp.length; i++){
 
