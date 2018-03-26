@@ -30,6 +30,10 @@ public class AllWorkoutsPage extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
+        showData();
+    }
+
+    protected void showData(){
         CustomWorkoutListAdapter whatever = new CustomWorkoutListAdapter(this, nameArray, imageArray);
         listView = (ListView) findViewById(R.id.listviewID);
         listView.setAdapter(whatever);
@@ -42,17 +46,11 @@ public class AllWorkoutsPage extends AppCompatActivity {
                                     long id) {
 
                 Intent intent = new Intent(AllWorkoutsPage.this, WorkoutDetailsPage.class);
-                String message = list.get(position).getWorkoutName();
-                String message2 = list.get(position).getWorkoutDescription();
-                Integer image = imageArray[position];
-                intent.putExtra("name", message);
-                intent.putExtra("description", message2);
-                intent.putExtra("image", image);
+                intent.putExtra("name", list.get(position).getWorkoutName());
                 startActivity(intent);
             }
         });
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the app bar.
@@ -72,11 +70,32 @@ public class AllWorkoutsPage extends AppCompatActivity {
                 startActivity(intent);
                 return true;
             case R.id.action_add:
-                 intent = new Intent(this, AddWorkoutActivity.class);
-                 startActivity(intent);
-                 return true;
+                //startActivityForResult(new Intent(this, AddWorkoutActivity.class), 666);
+                intent = new Intent(this, AddWorkoutActivity.class);
+                startActivity(intent);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
+        }
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+        if(resultCode == RESULT_OK && requestCode == 666) {
+            String name = data.getStringExtra("exercise");
+
+            String[] names = new String[nameArray.length+1];
+            Integer[] images = new Integer[imageArray.length+1];
+
+            System.arraycopy(nameArray, 0, names, 0, nameArray.length);
+            System.arraycopy(imageArray, 0, images, 0, imageArray.length);
+
+            names[names.length-1] = name;
+            images[images.length-1] = imageArray[0];
+
+            nameArray = names;
+            imageArray = images;
+
+            showData();
         }
     }
 }
