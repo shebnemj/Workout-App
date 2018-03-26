@@ -96,14 +96,13 @@ public class WorkoutDetailsPage extends AppCompatActivity implements View.OnClic
         listView = (ListView) findViewById(R.id.listviewWD);
         listView.setAdapter(whatever);
 
-        final int finalI = i;
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position,
                                     long id) {
 
                         Intent intent = new Intent(WorkoutDetailsPage.this, ExerciseDetailsPage.class);
-                        intent.putExtra("name",list.get(finalI).getExerciseName());
+                        intent.putExtra("name",list.get(position).getExerciseName());
                         startActivity(intent);
 
                 }
@@ -143,7 +142,6 @@ public class WorkoutDetailsPage extends AppCompatActivity implements View.OnClic
                 return super.onOptionsItemSelected(item);
         }
     }
-
 
     //@Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
