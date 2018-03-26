@@ -177,6 +177,12 @@ public class User {
         w.printWorkoutInfo();
     }
 
+    public void addWorkout(String wNName, boolean type, String wNDes, int wNDur){
+        Workout wN;
+        wN = new Workout(wNName, true,wNDes,wNDur);
+        workoutList.add(wN);
+    }
+
     public void createWorkout() {
         Workout wN;
         System.out.println(" What is the Workout Name");
