@@ -19,7 +19,7 @@
         <activity
             android:name=".AllWorkoutsPage"
             android:label="@string/action_all_workouts"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName="com.example.sebnem.workoutapp.MainActivity" />
         <activity
             android:name=".AllExercisesPage"
             android:label="@string/action_all_exercises"
@@ -39,26 +39,30 @@
             android:name=".WorkoutDetailsPage"
             android:label=""
             android:parentActivityName=".AllWorkoutsPage" />
+
         <activity
             android:name=".ExerciseDetailsPage"
             android:label=""
             android:parentActivityName=".AllExercisesPage" />
+
         <activity
             android:name=".ProfileActivity"
             android:label="@string/action_profile"
             android:parentActivityName=".MainActivity" />
+
         <activity
             android:name=".SettingsActivity"
             android:label="@string/action_settings"
             android:parentActivityName=".MainActivity" />
+
         <activity
             android:name=".AddWorkoutActivity"
             android:label="Create Workout"
             android:parentActivityName=".AllWorkoutsPage" />
+
         <activity
             android:name=".EditWorkoutActivity"
-            android:label="Edit Workout"
-            android:parentActivityName=".AllWorkoutsPage"/>
+            android:label="Edit Workout"/>
     </application>
 
 </manifest>

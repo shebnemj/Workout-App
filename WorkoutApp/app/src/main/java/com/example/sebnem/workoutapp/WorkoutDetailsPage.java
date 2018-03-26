@@ -22,9 +22,14 @@ public class WorkoutDetailsPage extends AppCompatActivity implements View.OnClic
 
     Integer[] imageArray = Exercise.eImages();
 
-    final List<Workout> workoutlist=Workout.workouts;
-
     ListView listView;
+
+    String workoutName;
+
+    String workoutDescrip;
+
+    TextView myText;
+    TextView myText2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,15 +41,15 @@ public class WorkoutDetailsPage extends AppCompatActivity implements View.OnClic
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        String savedExtra = getIntent().getStringExtra("animal");
-        TextView myText = (TextView) findViewById(R.id.textID);
-        myText.setText(savedExtra);
+        workoutName = getIntent().getStringExtra("name");
+        myText = (TextView) findViewById(R.id.textID);
+        myText.setText(workoutName);
 
-        String workoutDescripTest = getIntent().getStringExtra("species");
-        TextView myText2 = (TextView) findViewById(R.id.textID6);
-        myText2.setText(workoutDescripTest);
+        workoutDescrip = getIntent().getStringExtra("description");
+        myText2 = (TextView) findViewById(R.id.textID6);
+        myText2.setText(workoutDescrip);
 
-        Integer workoutImage = getIntent().getIntExtra("maybimage",0);
+        Integer workoutImage = getIntent().getIntExtra("image",0);
         ImageView imageView = (ImageView) findViewById(R.id.imageView2);
         imageView.setImageResource(workoutImage);
 
@@ -125,9 +130,11 @@ public class WorkoutDetailsPage extends AppCompatActivity implements View.OnClic
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        Intent intent;
+        Intent editintent;
         switch (item.getItemId()) {
             case R.id.action_settings:
-                Intent intent = new Intent(this, SettingsActivity.class);
+                intent = new Intent(this, SettingsActivity.class);
                 startActivity(intent);
                 return true;
             case R.id.action_profile:
@@ -135,25 +142,39 @@ public class WorkoutDetailsPage extends AppCompatActivity implements View.OnClic
                 startActivity(intent);
                 return true;
             case R.id.action_edit:
-                intent = new Intent(this, EditWorkoutActivity.class);
+                editintent = new Intent(this, EditWorkoutActivity.class);
 
-/*
-                String workoutname = workoutlist.get(i);
-                //String message = workoutlist.get(position).getExerciseName();
-                //String message2 = list.get(position).getDescription();
-                //String equip = list.get(position).getEquipment();
-                Integer image = list.get(position).getImage();
-                String type = list.get(position).getType();
-                intent.putExtra("name", message);
-                intent.putExtra("description", message2);
-                intent.putExtra("maybimage", image);
-                intent.putExtra("equipment", equip);
-                intent.putExtra("TYPE", type);*/
+                editintent.putExtra("name", workoutName);
+                editintent.putExtra("description", workoutDescrip);
 
-                startActivity(intent);
+                startActivityForResult(editintent, 1);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
+        }
+    }
+
+
+    //@Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        // check that it is the SecondActivity with an OK result
+        if (requestCode == 1) {
+            if (resultCode == RESULT_OK) { // Activity.RESULT_OK
+
+                // get String data from Intent
+                workoutName = data.getStringExtra("name");
+                workoutDescrip = data.getStringExtra("description");
+
+                // set text view with string
+                TextView myText = (TextView) findViewById(R.id.textID);
+                myText.setText(workoutName);
+
+                myText2 = (TextView) findViewById(R.id.textID6);
+                myText2.setText(workoutDescrip);
+
+            }
         }
     }
 

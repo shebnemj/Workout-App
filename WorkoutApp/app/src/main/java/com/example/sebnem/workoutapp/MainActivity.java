@@ -60,12 +60,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                     long id) {
 
                 Intent intent = new Intent(MainActivity.this, WorkoutDetailsPage.class);
-                String message = nameArray[position];
+                String message = list.get(position).getWorkoutName();
                 String message2 = list.get(position).getWorkoutDescription();
                 Integer image = imageArray[position];
-                intent.putExtra("animal", message);
-                intent.putExtra("species", message2);
-                intent.putExtra("maybimage", image);
+                intent.putExtra("name", message);
+                intent.putExtra("description", message2);
+                intent.putExtra("image", image);
                 startActivity(intent);
             }
         });

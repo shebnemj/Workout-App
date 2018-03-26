@@ -24,10 +24,12 @@ public class AllWorkoutsPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.all_workouts);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
+
         CustomWorkoutListAdapter whatever = new CustomWorkoutListAdapter(this, nameArray, imageArray);
         listView = (ListView) findViewById(R.id.listviewID);
         listView.setAdapter(whatever);
@@ -40,23 +42,17 @@ public class AllWorkoutsPage extends AppCompatActivity {
                                     long id) {
 
                 Intent intent = new Intent(AllWorkoutsPage.this, WorkoutDetailsPage.class);
-                String message = nameArray[position];
+                String message = list.get(position).getWorkoutName();
                 String message2 = list.get(position).getWorkoutDescription();
                 Integer image = imageArray[position];
-                intent.putExtra("animal", message);
-                intent.putExtra("species", message2);
-                intent.putExtra("maybimage", image);
+                intent.putExtra("name", message);
+                intent.putExtra("description", message2);
+                intent.putExtra("image", image);
                 startActivity(intent);
             }
         });
     }
 
-    /**
-     * Inflates the options menu and adds items to the menu.
-     *
-     * @param menu Options menu
-     * @return True if menu is inflated.
-     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the app bar.

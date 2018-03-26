@@ -8,17 +8,18 @@ public class Workout {
     private boolean workoutType;
     private String workoutDescription;
     private int duration;
+    private int imageLink;
     private ArrayList<Exercise> exerciseList;
 
     public static ArrayList<Workout> workouts= initArrayList();
 
     private static ArrayList<Workout> initArrayList(){
         ArrayList<Workout> list =new ArrayList<>();
-        list.add(new Workout("HIIT",true, "Okay", 10));
-        list.add(new Workout("Lifts",false, "is this gonna work i wonder", 15));
-        list.add(new Workout("Lifts",false, "is this gonna work i wonder", 15));
-        list.add(new Workout("Lifts",false, "is this gonna work i wonder", 15));
-        list.add(new Workout("Lifts",false, "is this gonna work i wonder", 15));
+        list.add(new Workout("HIIT",true, "For fat burn.", 10));
+        list.add(new Workout("Abs",false, "For abs.", 15));
+        list.add(new Workout("Yoga",false, "Zen.", 15));
+        list.add(new Workout("Tight Butt",false, "Squat bich.", 15));
+        list.add(new Workout("Arms",false, "Get rid of them chicken wings.", 15));
         list.add(new Workout("Lifts",false, "is this gonna work i wonder", 15));
         list.add(new Workout("Lifts",false, "is this gonna work i wonder", 15));
         list.add(new Workout("Lifts",false, "is this gonna work i wonder", 15));
@@ -87,6 +88,14 @@ public class Workout {
 
     public void removeWExercise(Exercise ex) {
         exerciseList.remove(ex);
+    }
+
+    public int getImage() {
+        return this.imageLink;
+    }
+
+    public void setImage(int imglink) {
+        this.imageLink = imglink;
     }
 
     public void printExerciseList() {

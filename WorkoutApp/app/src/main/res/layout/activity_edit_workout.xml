@@ -31,7 +31,7 @@
         android:inputType="textPersonName"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editWONameEW"
-        tools:text="WODescrip" />
+        android:text="WODescrip" />
 
     <TextView
         android:id="@+id/workoutDesripEW"
@@ -55,7 +55,7 @@
         android:inputType="textMultiLine"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        tools:text="WOName" />
+        android:text="WOName" />
 
     <TextView
         android:id="@+id/textView4"
@@ -98,5 +98,17 @@
             android:text="Manual" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/action_edit_workout"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Edit Workout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
