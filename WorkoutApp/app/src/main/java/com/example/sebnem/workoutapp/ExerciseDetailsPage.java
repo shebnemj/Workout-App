@@ -124,8 +124,6 @@ public class ExerciseDetailsPage extends AppCompatActivity implements View.OnCli
             }
         }
 
-
-
         startActivity(intent);
 
     }

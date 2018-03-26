@@ -8,9 +8,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -76,8 +79,9 @@ public class WorkoutDetailsPage extends AppCompatActivity implements View.OnClic
             }
         }
 
-        final List<Exercise> list = wExerciseList.get(i);
+        final List<Exercise> list = Exercise.exercises;//wExerciseList.get(i);
 
+        /*
         String[] nameArray = new String[list.size()];
 
         for (int j=0;j<nameArray.length;j++){
@@ -88,21 +92,25 @@ public class WorkoutDetailsPage extends AppCompatActivity implements View.OnClic
 
         for (int j=0;j<imageArray.length;j++){
             imageArray[j]=list.get(j).getImage();
-        }
+        }*/
+
+        String[] nameArray = Exercise.eNames();
+
+        Integer[] imageArray = Exercise.eImages();
 
 
         CustomExerciseListAdapter whatever = new CustomExerciseListAdapter(this, nameArray, imageArray);
         listView = (ListView) findViewById(R.id.listviewWD);
         listView.setAdapter(whatever);
+        setListViewHeightBasedOnChildren(listView);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position,
                                     long id) {
-
-                        Intent intent = new Intent(WorkoutDetailsPage.this, ExerciseDetailsPage.class);
-                        intent.putExtra("name",list.get(position).getExerciseName());
-                        startActivity(intent);
+                Intent intent = new Intent(WorkoutDetailsPage.this, ExerciseDetailsPage.class);
+                intent.putExtra("name",list.get(position).getExerciseName());
+                startActivity(intent);
 
                 }
             });
@@ -163,6 +171,30 @@ public class WorkoutDetailsPage extends AppCompatActivity implements View.OnClic
 
             }
         }
+    }
+
+    public static void setListViewHeightBasedOnChildren(ListView listView) {
+        ListAdapter listAdapter = listView.getAdapter();
+        if (listAdapter == null) {
+            // pre-condition
+            return;
+        }
+
+        int totalHeight = listView.getPaddingTop() + listView.getPaddingBottom();
+
+        for (int i = 0; i < listAdapter.getCount(); i++) {
+            View listItem = listAdapter.getView(i, null, listView);
+            if (listItem instanceof ViewGroup) {
+                listItem.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+            }
+
+            listItem.measure(0, 0);
+            totalHeight += listItem.getMeasuredHeight();
+        }
+
+        ViewGroup.LayoutParams params = listView.getLayoutParams();
+        params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
+        listView.setLayoutParams(params);
     }
 
 }
