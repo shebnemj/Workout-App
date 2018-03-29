@@ -21,11 +21,15 @@ public class WorkoutDetailsPage extends AppCompatActivity implements View.OnClic
 
     ArrayList<ArrayList<Exercise>> wExerciseList = Workout.wExercises();
     List<Workout> workoutList = Workout.workouts;
-    Workout w = workoutList.get(0);
 
     ListView listView;
 
     String workoutName;
+
+    String workoutDescrip;
+
+    TextView myText;
+    TextView myText2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,20 +41,17 @@ public class WorkoutDetailsPage extends AppCompatActivity implements View.OnClic
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        final String wName = getIntent().getStringExtra("name");
-        for(int x=0;x<workoutList.size();x++){
-            if(workoutList.get(x).getWorkoutName().equals(wName))
-                w=workoutList.get(x);
-        }
+        workoutName = getIntent().getStringExtra("name");
+        myText = (TextView) findViewById(R.id.textID);
+        myText.setText(workoutName);
 
-        TextView myText = (TextView) findViewById(R.id.textID);
-        myText.setText(w.getWorkoutName());
+        workoutDescrip = getIntent().getStringExtra("description");
+        myText2 = (TextView) findViewById(R.id.textID6);
+        myText2.setText(workoutDescrip);
 
-        TextView myText2 = (TextView) findViewById(R.id.textID6);
-        myText2.setText(w.getWorkoutDescription());
-
+        Integer workoutImage = getIntent().getIntExtra("image",0);
         ImageView imageView = (ImageView) findViewById(R.id.imageView2);
-        imageView.setImageResource(w.getWorkoutImageLink());
+        imageView.setImageResource(workoutImage);
 
         ImageButton startWorkout = (ImageButton) findViewById(R.id.startWorkoutButton);
         startWorkout.setOnClickListener(this);
@@ -71,7 +72,7 @@ public class WorkoutDetailsPage extends AppCompatActivity implements View.OnClic
         int i;
 
         for(i = 0; i < workoutList.size(); i++){
-            if(workoutList.get(i) == w) {
+            if(workoutList.get(i).getWorkoutName().equals(workoutName)) {
                 break;
             }
         }
@@ -132,8 +133,8 @@ public class WorkoutDetailsPage extends AppCompatActivity implements View.OnClic
             case R.id.action_edit:
                 editintent = new Intent(this, EditWorkoutActivity.class);
 
-                editintent.putExtra("name", w.getWorkoutName());
-                editintent.putExtra("description", w.getWorkoutDescription());
+                editintent.putExtra("name", workoutName);
+                editintent.putExtra("description", workoutDescrip);
 
                 startActivityForResult(editintent, 1);
                 return true;
@@ -152,13 +153,13 @@ public class WorkoutDetailsPage extends AppCompatActivity implements View.OnClic
 
                 // get String data from Intent
                 workoutName = data.getStringExtra("name");
-                String workoutDescrip = data.getStringExtra("description");
+                workoutDescrip = data.getStringExtra("description");
 
                 // set text view with string
                 TextView myText = (TextView) findViewById(R.id.textID);
                 myText.setText(workoutName);
 
-                TextView myText2 = (TextView) findViewById(R.id.textID6);
+                myText2 = (TextView) findViewById(R.id.textID6);
                 myText2.setText(workoutDescrip);
 
             }

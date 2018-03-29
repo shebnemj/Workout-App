@@ -11,9 +11,29 @@ public class Workout {
     private int imageLink;
     private ArrayList<Exercise> exerciseList;
 
-    public static ArrayList<Workout> workouts= User.getInstance().getWorkoutList();
+    public static ArrayList<Workout> workouts= initArrayList();
 
     public ArrayList<Exercise> list=Exercise.exercises;
+
+    private static ArrayList<Workout> initArrayList(){
+        ArrayList<Workout> list =new ArrayList<>();
+        list.add(new Workout("HIIT",true, "For fat burn.", 10, R.drawable.hiit));
+        list.add(new Workout("Beginner Abs",false, "For abs.", 15, R.drawable.abs));
+        list.add(new Workout("Yoga",false, "Zen.", 15, R.drawable.yogamatt));
+        list.add(new Workout("Fat Blaster",false, "Squat bich.", 15,R.drawable.abs));
+        list.add(new Workout("Arms",false, "Get rid of them chicken wings.", 15,R.drawable.dumbbell));
+        list.add(new Workout("Dumbbell Workout",false, "is this gonna work i wonder", 15, R.drawable.dumbbell));
+        list.add(new Workout("Summer Body",false, "is this gonna work i wonder", 15,R.drawable.abs));
+        list.add(new Workout("Core Trainer",false, "is this gonna work i wonder", 15,R.drawable.stretch));
+        list.add(new Workout("Butt BLASTAH",false, "okkkkkk", 15,R.drawable.hiit));
+        for(int i=0;i<list.size();i++){
+            list.get(i).exerciseList.add(Exercise.exercises.get(i));
+            list.get(i).exerciseList.add(Exercise.exercises.get(i+1));
+            list.get(i).exerciseList.add(Exercise.exercises.get(i+2));
+            list.get(i).exerciseList.add(Exercise.exercises.get(i+3));
+        }
+        return list;
+    }
 
     public static String[] wNames(){
         String[] names=new String[workouts.size()];
@@ -79,6 +99,7 @@ public class Workout {
         this.duration = time;
     }
 
+//USED THIS METHOD BELOW DONT DELETE
     public void addWExercise(Exercise ex) {
         exerciseList.add(ex);
     }
@@ -95,7 +116,7 @@ public class Workout {
         this.imageLink = imglink;
     }
 
-    private ArrayList<Exercise> getExerciseList(){return this.exerciseList;}
+    public ArrayList<Exercise> getExerciseList(){return this.exerciseList;}
 
     public void printExerciseList() {
         System.out.println("Current exercises within this workout are:");

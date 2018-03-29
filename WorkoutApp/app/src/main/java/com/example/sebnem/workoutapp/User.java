@@ -365,18 +365,8 @@ public class User {
 
     public ArrayList<Workout> setWorkouts()
     {
-        ArrayList<Workout> list =new ArrayList<>();
-        list.add(new Workout("HIIT",true, "For fat burn.", 10, R.drawable.hiit));
-        list.add(new Workout("Beginner Abs",false, "For abs.", 15, R.drawable.abs));
-        list.add(new Workout("Yoga",false, "Zen.", 15, R.drawable.yogamatt));
-        list.add(new Workout("Fat Blaster",false, "Squat bich.", 15,R.drawable.abs));
-        list.add(new Workout("Arms",false, "Get rid of them chicken wings.", 15,R.drawable.dumbbell));
-        list.add(new Workout("Dumbbell Workout",false, "is this gonna work i wonder", 15, R.drawable.dumbbell));
-        list.add(new Workout("Summer Body",false, "is this gonna work i wonder", 15,R.drawable.abs));
-        list.add(new Workout("Core Trainer",false, "is this gonna work i wonder", 15,R.drawable.stretch));
-        list.add(new Workout("Butt BLASTAH",false, "okkkkkk", 15,R.drawable.hiit));
-        return list;
-        /*Workout wSave;
+        ArrayList<Workout> workoutsSaved = new ArrayList<Workout>();
+        Workout wSave;
         Exercise exAddW;
         //exercisesSaved.add(new Cardio("TreadmillExercise", "Running", "Treadmill", 4, 10, 4.1 ));
         //System.out.println("added");
@@ -405,7 +395,7 @@ public class User {
         {
             System.out.println("ERROR: The data has not been imported successfully");
         }
-        return workoutsSaved;*/
+        return workoutsSaved;
     }
 
 

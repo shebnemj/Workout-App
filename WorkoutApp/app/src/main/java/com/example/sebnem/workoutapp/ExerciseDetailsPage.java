@@ -61,6 +61,9 @@ public class ExerciseDetailsPage extends AppCompatActivity implements View.OnCli
                 TextView typeCardio = (TextView) findViewById(R.id.textID110);
                 typeCardio.setText("Cardio");
 
+                Button removeExCButton = (Button) findViewById(R.id.removeExCardio);
+                removeExCButton.setOnClickListener(this);
+
                 break;
 
             case "Muscle":
@@ -96,8 +99,10 @@ public class ExerciseDetailsPage extends AppCompatActivity implements View.OnCli
                 TextView typeMuscle = (TextView) findViewById(R.id.textID11);
                 typeMuscle.setText(ex.getType());
 
-                Button removeExButton = (Button) findViewById(R.id.removeEx);
-                removeExButton.setOnClickListener(this);
+                Button removeExMButton = (Button) findViewById(R.id.removeEx);
+                removeExMButton.setOnClickListener(this);
+
+
 
                 break;
 
@@ -124,8 +129,6 @@ public class ExerciseDetailsPage extends AppCompatActivity implements View.OnCli
             }
         }
 
-
-
         startActivity(intent);
 
     }
@@ -150,7 +153,7 @@ public class ExerciseDetailsPage extends AppCompatActivity implements View.OnCli
                 return true;
             case R.id.action_edit:
                 intent=new Intent(this,EditExerciseActivity.class);
-                intent.putExtra("pos",getIntent().getIntExtra("pos",0));
+                intent.putExtra("name",getIntent().getStringExtra("name"));
                 startActivity(intent);
                 return true;
             default:

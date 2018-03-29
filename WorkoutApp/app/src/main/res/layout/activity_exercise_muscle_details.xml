@@ -11,196 +11,183 @@
         android:id="@+id/toolbar" />
 
     <!-- bla bla bla-->
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.sebnem.workoutapp.ExerciseDetailsPage">
-
-    <android.support.constraint.ConstraintLayout
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        tools:context="com.example.sebnem.workoutapp.ExerciseDetailsPage">
 
-        <TextView
-            android:id="@+id/textID14"
-            android:layout_width="197dp"
-            android:layout_height="139dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/borders"
-            android:paddingTop="4dp"
-            android:scrollbars="vertical"
-            android:text="Exercise Description"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textID12" />
-
-        <TextView
-            android:id="@+id/textID13"
-            android:layout_width="94dp"
-            android:layout_height="27dp"
-            android:layout_marginTop="8dp"
-            android:text="Minutes"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/imageView3"
-            app:layout_constraintTop_toBottomOf="@+id/textID2" />
-
-        <TextView
-            android:id="@+id/textID2"
-            android:layout_width="147dp"
-            android:layout_height="70dp"
-            android:layout_marginTop="44dp"
-            android:text="Exercise Name"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.515"
-            app:layout_constraintStart_toEndOf="@id/imageView3"
-            app:layout_constraintTop_toTopOf="@+id/imageView3" />
-
-        <TextView
-            android:id="@+id/textID12"
-            android:layout_width="119dp"
-            android:layout_height="25dp"
-            android:layout_marginTop="20dp"
-            android:text="Description"
-            android:textAlignment="textEnd"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toStartOf="@+id/textID14"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textID10" />
-
-        <TextView
-            android:id="@+id/textID11"
-            android:layout_width="198dp"
-            android:layout_height="31dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/borders"
-            android:paddingTop="4dp"
-            android:text="Exercise Type"
-            android:textAlignment="textStart"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textID10" />
-
-        <TextView
-            android:id="@+id/textID10"
-            android:layout_width="119dp"
-            android:layout_height="31dp"
-            android:layout_marginTop="20dp"
-            android:text="Type"
-            android:textAlignment="textEnd"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toStartOf="@+id/textID11"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
-
-        <TextView
-            android:id="@+id/textID16"
-            android:layout_width="198dp"
-            android:layout_height="31dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/borders"
-            android:paddingTop="4dp"
-            android:text="Exercise equipment"
-            android:textAlignment="textStart"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textID17" />
-
-        <TextView
-            android:id="@+id/textID17"
-            android:layout_width="119dp"
-            android:layout_height="31dp"
-            android:layout_marginTop="20dp"
-            android:text="Equipment"
-            android:textAlignment="textEnd"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toStartOf="@+id/textID16"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textID14" />
-
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="180dp"
-            android:layout_height="180dp"
-            android:scaleType="centerCrop"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar"
-            app:srcCompat="@drawable/yogamatt"
-            tools:ignore="NotSibling" />
-
-        <TextView
-            android:id="@+id/textID30"
-            android:layout_width="198dp"
-            android:layout_height="31dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/borders"
-            android:paddingTop="4dp"
-            android:text="Exercise reps"
-            android:textAlignment="textStart"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textID90" />
-
-        <TextView
-            android:id="@+id/textID90"
-            android:layout_width="119dp"
-            android:layout_height="31dp"
-            android:layout_marginTop="20dp"
-            android:text="Reps"
-            android:textAlignment="textEnd"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toStartOf="@+id/textID30"
-            app:layout_constraintHorizontal_bias="0.592"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textID17" />
-
-        <TextView
-            android:id="@+id/textID303"
-            android:layout_width="198dp"
-            android:layout_height="31dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/borders"
-            android:paddingTop="4dp"
-            android:text="Exercise muscle type"
-            android:textAlignment="textStart"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textID903" />
-
-        <TextView
-            android:id="@+id/textID903"
-            android:layout_width="119dp"
-            android:layout_height="31dp"
-            android:layout_marginTop="20dp"
-            android:text="Muscle"
-            android:textAlignment="textEnd"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toStartOf="@+id/textID303"
-            app:layout_constraintHorizontal_bias="0.592"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textID90" />
-
-        <Button
-            android:id="@+id/removeEx"
+        <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Remove Exercise"
-            android:backgroundTint="#e85858"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textID303"
-            android:layout_marginTop="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteX="0dp" />
+            android:layout_height="wrap_content">
 
-    </android.support.constraint.ConstraintLayout>
+            <TextView
+                android:id="@+id/textID14"
+                android:layout_width="197dp"
+                android:layout_height="139dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/borders"
+                android:paddingTop="4dp"
+                android:scrollbars="vertical"
+                android:text="Exercise Description"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textID12" />
 
-</ScrollView>
+            <TextView
+                android:id="@+id/textID2"
+                android:layout_width="147dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="76dp"
+                android:text="Exercise Name"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                app:layout_constraintStart_toEndOf="@id/imageView3"
+                app:layout_constraintTop_toTopOf="@+id/imageView3" />
+
+            <TextView
+                android:id="@+id/textID12"
+                android:layout_width="119dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="20dp"
+                android:text="Description"
+                android:textAlignment="textEnd"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@+id/textID14"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textID10" />
+
+            <TextView
+                android:id="@+id/textID11"
+                android:layout_width="198dp"
+                android:layout_height="31dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/borders"
+                android:paddingTop="4dp"
+                android:text="Exercise Type"
+                android:textAlignment="textStart"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textID10" />
+
+            <TextView
+                android:id="@+id/textID10"
+                android:layout_width="119dp"
+                android:layout_height="31dp"
+                android:layout_marginTop="20dp"
+                android:text="Type"
+                android:textAlignment="textEnd"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@+id/textID11"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+            <TextView
+                android:id="@+id/textID16"
+                android:layout_width="198dp"
+                android:layout_height="31dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/borders"
+                android:paddingTop="4dp"
+                android:text="Exercise equipment"
+                android:textAlignment="textStart"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textID17" />
+
+            <TextView
+                android:id="@+id/textID17"
+                android:layout_width="119dp"
+                android:layout_height="31dp"
+                android:layout_marginTop="20dp"
+                android:text="Equipment"
+                android:textAlignment="textEnd"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@+id/textID16"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textID14" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                app:srcCompat="@drawable/yogamatt"
+                tools:ignore="NotSibling" />
+
+            <TextView
+                android:id="@+id/textID30"
+                android:layout_width="198dp"
+                android:layout_height="31dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/borders"
+                android:paddingTop="4dp"
+                android:text="Exercise reps"
+                android:textAlignment="textStart"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textID90" />
+
+            <TextView
+                android:id="@+id/textID90"
+                android:layout_width="119dp"
+                android:layout_height="31dp"
+                android:layout_marginTop="20dp"
+                android:text="Reps"
+                android:textAlignment="textEnd"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@+id/textID30"
+                app:layout_constraintHorizontal_bias="0.592"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textID17" />
+
+            <TextView
+                android:id="@+id/textID303"
+                android:layout_width="198dp"
+                android:layout_height="31dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/borders"
+                android:paddingTop="4dp"
+                android:text="Exercise muscle type"
+                android:textAlignment="textStart"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textID903" />
+
+            <TextView
+                android:id="@+id/textID903"
+                android:layout_width="119dp"
+                android:layout_height="31dp"
+                android:layout_marginTop="20dp"
+                android:text="Muscle"
+                android:textAlignment="textEnd"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@+id/textID303"
+                app:layout_constraintHorizontal_bias="0.592"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textID90" />
+
+            <Button
+                android:id="@+id/removeEx"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Remove Exercise"
+                android:backgroundTint="#e85858"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textID303"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteX="0dp" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
 </LinearLayout>

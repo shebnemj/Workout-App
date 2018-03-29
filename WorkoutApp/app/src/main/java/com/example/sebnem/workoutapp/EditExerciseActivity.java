@@ -24,17 +24,25 @@ public class EditExerciseActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        final int position = getIntent().getIntExtra("pos",0);
-        ex=Exercise.exercises.get(position);
+        final String name = getIntent().getStringExtra("name");
+        //Toast.makeText(getApplicationContext(), name, Toast.LENGTH_SHORT).show();
+        for(int i=0;i<Exercise.exercises.size();i++){
+            if(Exercise.exercises.get(i).getExerciseName().equals(name))
+                //Toast.makeText(getApplicationContext(), name, Toast.LENGTH_SHORT).show();
+                ex=Exercise.exercises.get(i);
+        }
 
         final EditText nameEdit=(EditText)findViewById(R.id.exName_input);
         nameEdit.setText(ex.getExerciseName());
 
+        //description
         final EditText descEdit=(EditText)findViewById(R.id.exDesc_input);
         descEdit.setText(ex.getDescription());
 
+        //equipment
         final EditText equpipmentEdit=(EditText)findViewById(R.id.exEquip_input);
         equpipmentEdit.setText(ex.getEquipment());
+        //reps
 
         Button confirmButton=(Button) findViewById(R.id.confirmButton);
         confirmButton.setOnClickListener(new View.OnClickListener() {
@@ -43,9 +51,10 @@ public class EditExerciseActivity extends AppCompatActivity {
                 ex.setExerciseName(nameEdit.getText().toString());
                 ex.setDescription(descEdit.getText().toString());
                 ex.setEquipment(equpipmentEdit.getText().toString());
+                Toast.makeText(getApplicationContext(), ex.getExerciseName(), Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(EditExerciseActivity.this, ExerciseDetailsPage.class);
-                intent.putExtra("pos",position);
+                intent.putExtra("name",ex.getExerciseName());
                 startActivity(intent);
             }
         });

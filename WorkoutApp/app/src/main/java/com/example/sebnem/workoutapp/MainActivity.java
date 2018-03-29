@@ -17,17 +17,17 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    final List<Workout> list = Workout.workouts;
+    Workout[] workouts = {
+            Workout.workouts.get(0),
+            Workout.workouts.get(1),
+            Workout.workouts.get(2)
+    };
 
-    String[] nameArray = {list.get(0).getWorkoutName(),
-            list.get(1).getWorkoutName(),
-            list.get(2).getWorkoutName(),
-            list.get(3).getWorkoutName()};
+    String[] nameArray = {workouts[0].getWorkoutName(),workouts[1].getWorkoutName(),workouts[2].getWorkoutName()};
 
-    Integer[] imageArray = {list.get(0).getWorkoutImageLink(),
-            list.get(1).getWorkoutImageLink(),
-            list.get(2).getWorkoutImageLink(),
-            list.get(3).getWorkoutImageLink()};
+    Integer[] imageArray = {R.drawable.hiit,
+            R.drawable.dumbbell,
+            R.drawable.stretch};
 
     ListView listView;
     @Override
@@ -46,13 +46,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         listView = (ListView) findViewById(R.id.listviewID);
         listView.setAdapter(whatever);
 
+        final List<Workout> list;
+
+        list = new ArrayList<Workout>();
+
+        for(int i=0;i<workouts.length;i++){
+            list.add(workouts[i]);
+        }
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position,
                                     long id) {
 
                 Intent intent = new Intent(MainActivity.this, WorkoutDetailsPage.class);
-                intent.putExtra("name", list.get(position).getWorkoutName());
+                String message = list.get(position).getWorkoutName();
+                String message2 = list.get(position).getWorkoutDescription();
+                Integer image = imageArray[position];
+                intent.putExtra("name", message);
+                intent.putExtra("description", message2);
+                intent.putExtra("image", image);
                 startActivity(intent);
             }
         });

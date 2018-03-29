@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -36,8 +37,17 @@ public class EditWorkoutActivity extends AppCompatActivity implements View.OnCli
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
+        final EditText editText=(EditText)findViewById(R.id.removeExField);
 
         workoutName = getIntent().getStringExtra("name");
+        Workout w=Workout.workouts.get(0);
+        for(int i=0;i<Workout.workouts.size();i++){
+            if(Workout.workouts.get(i).getWorkoutName().equals(workoutName))
+                w=Workout.workouts.get(i);
+        }
+        final Workout fw=w;
+        final int size=w.getExerciseList().size();
+        editText.setHint("number between 1 and "+size);
         oldWorkoutName = workoutName;
         workoutNameEditor = (EditText) findViewById(R.id.editWONameEW);
         workoutNameEditor.setText(workoutName);
@@ -45,6 +55,23 @@ public class EditWorkoutActivity extends AppCompatActivity implements View.OnCli
         workoutDescrip = getIntent().getStringExtra("description");
         workoutDescripEditor = (EditText) findViewById(R.id.editWODescripEW);
         workoutDescripEditor.setText(workoutDescrip);
+
+        Button removeButton =findViewById(R.id.button2);
+        removeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int exToRemove=0;
+                exToRemove=Integer.parseInt(editText.getText().toString());
+                if(exToRemove<=size&&exToRemove>0){
+                    fw.getExerciseList().remove(exToRemove-1);
+                    Intent intent =new Intent(EditWorkoutActivity.this,AllWorkoutsPage.class);
+                    startActivity(intent);
+                }
+                else{
+                    Toast.makeText(getApplicationContext(),"Please enter number between 1 and "+size,Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
         Button editWorkoutButton = (Button) findViewById(R.id.action_edit_workout);
         editWorkoutButton.setOnClickListener(this);

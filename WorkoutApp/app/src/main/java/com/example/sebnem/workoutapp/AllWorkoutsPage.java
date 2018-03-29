@@ -38,7 +38,7 @@ public class AllWorkoutsPage extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.listviewID);
         listView.setAdapter(whatever);
 
-        final List<Workout> list = Workout.workouts;
+        final List<Workout> list=Workout.workouts;
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -47,10 +47,11 @@ public class AllWorkoutsPage extends AppCompatActivity {
 
                 Intent intent = new Intent(AllWorkoutsPage.this, WorkoutDetailsPage.class);
                 intent.putExtra("name", list.get(position).getWorkoutName());
+                intent.putExtra("description", list.get(position).getWorkoutDescription());
+                intent.putExtra("image", list.get(position).getWorkoutImageLink());
                 startActivity(intent);
             }
         });
-
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

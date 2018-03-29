@@ -32,8 +32,11 @@ public class AddWorkoutActivity extends AppCompatActivity {
         action_add_workout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Workout.workouts.add(new Workout(wName.getText().toString(),true, wDes.getText().toString(), Integer.parseInt(wDur.getText().toString()), R.drawable.abs ));
-                Intent intent = new Intent(AddWorkoutActivity.this, AllWorkoutsPage.class);
+                Intent intent = new Intent(AddWorkoutActivity.this, AddExtoWActivity.class);
+                intent.putExtra("wName", wName.getText().toString());
+                intent.putExtra("wDes", wDes.getText().toString());
+                intent.putExtra("wDur", Integer.parseInt(wDur.getText().toString()));
+                intent.putExtra("wImg", R.drawable.abs );
                 startActivity(intent);
             }
         });

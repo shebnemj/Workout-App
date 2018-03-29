@@ -10,19 +10,19 @@
         android:id="@+id/toolbar" />
 
     <TextView
-        android:id="@+id/textID18"
+        android:id="@+id/timertext"
         android:layout_width="95dp"
-        android:layout_height="36dp"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="36dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/borders"
         android:paddingTop="8dp"
-        android:text="4 seconds"
+        android:text="10"
+        android:textSize="20sp"
         android:textAlignment="textStart"
-        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/imageButton2"
+        app:layout_constraintStart_toEndOf="@id/imageButtonPause"
         app:layout_constraintTop_toBottomOf="@+id/textID15"
         app:layout_constraintVertical_bias="0.0" />
 
@@ -50,7 +50,7 @@
         android:text="Exercise Description"
         android:textAlignment="center"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton2"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonPause"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textID19"
@@ -69,13 +69,13 @@
         app:srcCompat="@drawable/barbell_shrugs" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/imageButtonPause"
         android:layout_width="160dp"
         android:layout_height="134dp"
         android:background="@android:color/transparent"
         android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textID18"
+        app:layout_constraintEnd_toStartOf="@+id/timertext"
         app:layout_constraintHorizontal_bias="0.376"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textID15"

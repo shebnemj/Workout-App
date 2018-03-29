@@ -10,6 +10,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import java.util.List;
+
 /**
  * Created by sebnem on 24/03/2018.
  */
@@ -28,8 +30,8 @@ public class WorkoutStart extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         workoutStartTimer = (TextView) findViewById(R.id.workoutSCD);
-        workoutStartCountdown();
 
+        workoutStartCountdown();
     }
 
     private void workoutStartCountdown(){
@@ -43,11 +45,10 @@ public class WorkoutStart extends AppCompatActivity {
             }
 
             public void onFinish(){
-                setContentView(R.layout.activity_workout);
-                Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-                setSupportActionBar(toolbar);
-                ActionBar actionBar = getSupportActionBar();
-                actionBar.setDisplayHomeAsUpEnabled(true);
+                Intent intent = new Intent(WorkoutStart.this, ExerciseTimer.class);
+                String workoutName = getIntent().getStringExtra("name");
+                intent.putExtra("name", workoutName);
+                startActivity(intent);
             }
         };
 
